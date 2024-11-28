@@ -7,6 +7,8 @@
   --deep-space-blue: #020410;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
 body {
   background: url(../components/images/blue-astra.png) var(--deep-space-blue);
   background-repeat: no-repeat;
