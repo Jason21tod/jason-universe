@@ -8,7 +8,7 @@
 }
 
 body {
-  background: url(../public/blue-astra.png) var(--deep-space-blue);
+  background: url(../components/images/blue-astra.png) var(--deep-space-blue);
   background-repeat: no-repeat;
   font-family: "Pixelify Sans", sans-serif;
   color: var(--electric-blue);
