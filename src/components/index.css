@@ -1,1 +1,33 @@
 
+header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 180%;
+    color: var(--white);
+    margin-bottom: 6%;
+}
+
+h2 {
+    font-size: 140%;
+    color: var(--lavender-web);
+    margin-bottom: 2%;
+}
+
+legend {
+    color: var(--lavender-web);
+    margin-bottom: 1.5%;
+}
+
+body {
+    margin: 10%;
+}
+
+.header-container p {
+    font-size: 90%;
+    text-decoration: underline;
+}
