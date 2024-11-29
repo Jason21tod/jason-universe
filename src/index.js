@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Main from './components/Main.jsx';
+import Header from './components/header/Header.jsx';
 import reportWebVitals from './reportWebVitals.js';
 import './components/index.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Header />
     <Main />
   </React.StrictMode>
 );

@@ -1,6 +1,7 @@
 import './reset.css';
 import './Main.css';
-import './styles/Generics.css'
+import '../styles/Generics.css';
+import '../styles/Header_container.css';
 
 
 function Main() {

@@ -4,10 +4,11 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100vw;
 }
 
 h1 {
-    font-size: 180%;
+    font-size: 160%;
     color: var(--white);
     margin-bottom: 6%;
 }
@@ -22,6 +23,52 @@ legend {
     color: var(--lavender-web);
     margin-bottom: 1.5%;
 }
+
+@media screen and (max-width: 400px) {
+    h1 {
+        font-size: 150%;
+        color: var(--white);
+        margin-bottom: 6%;
+    }
+
+    h2 {
+        font-size: 130%;
+        color: var(--lavender-web);
+        margin-bottom: 2%;
+    }
+    
+}
+
+@media screen and (max-width: 375px) {
+    h1 {
+        font-size: 140%;
+        color: var(--white);
+        margin-bottom: 6%;
+    }
+
+    h2 {
+        font-size: 120%;
+        color: var(--lavender-web);
+        margin-bottom: 2%;
+    }
+    
+}
+
+@media screen and (max-width: 320px) {
+    h1 {
+        font-size: 120%;
+        color: var(--white);
+        margin-bottom: 6%;
+    }
+
+    h2 {
+        font-size: 100%;
+        color: var(--lavender-web);
+        margin-bottom: 2%;
+    }
+    
+}
+
 
 body {
     margin: 10%;
