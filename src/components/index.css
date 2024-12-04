@@ -11,12 +11,14 @@ h1 {
     font-size: 160%;
     color: var(--white);
     margin-bottom: 6%;
+    font-weight: 600;
 }
 
 h2 {
     font-size: 140%;
     color: var(--lavender-web);
     margin-bottom: 2%;
+    font-weight: 500;
 }
 
 legend {

@@ -4,7 +4,7 @@ function Header() {
   return (
     <header className="header-container">
       <h1 className="header-container_title">
-        {/* O codigo abaixo cria uma animação de fadeIn em letra por letra */}
+        {/* O codigo abaixo cria uma animação de pop up em letra por letra */}
         {Array.from(title_text).map((char, index) => (
           <span
             key={index}
