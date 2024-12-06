@@ -26,32 +26,32 @@ legend {
     margin-bottom: 1.5%;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+}
+
 @media screen and (max-width: 400px) {
     h1 {
         font-size: 150%;
-        color: var(--white);
-        margin-bottom: 6%;
     }
 
     h2 {
         font-size: 130%;
-        color: var(--lavender-web);
-        margin-bottom: 2%;
     }
     
+    body {
+        row-gap: 20vh;
+    }
 }
 
 @media screen and (max-width: 375px) {
     h1 {
         font-size: 140%;
-        color: var(--white);
-        margin-bottom: 6%;
     }
 
     h2 {
         font-size: 120%;
-        color: var(--lavender-web);
-        margin-bottom: 2%;
     }
     
 }
@@ -59,24 +59,22 @@ legend {
 @media screen and (max-width: 320px) {
     h1 {
         font-size: 120%;
-        color: var(--white);
-        margin-bottom: 6%;
     }
 
     h2 {
         font-size: 100%;
-        color: var(--lavender-web);
-        margin-bottom: 2%;
     }
     
 }
 
-
 body {
-    margin: 10%;
+    padding: 0% 5%;
 }
 
 .header-container p {
-    font-size: 90%;
-    text-decoration: underline;
+    font-size: 85%;
+}
+
+.header-container p {
+    font-size: 85%;
 }

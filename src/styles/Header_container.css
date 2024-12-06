@@ -4,10 +4,20 @@
     flex-direction: column;
     width: 100%;
     line-height: 34px;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    row-gap: 20px;
+    
 }
 
 
-@keyframes fadeIn {
+.header-container_legend {
+  animation: descFadeIn 2s;
+}
+
+
+@keyframes fadeInY {
   from {
     opacity: 0;
     transform: translateY(20px); 
@@ -15,5 +25,14 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes descFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
