@@ -7,8 +7,6 @@ import { useRef } from 'react';
 import { useEffect } from 'react';
 
 
-
-
 function ScrollAnimation({ children }) {
   const [isVisible, setIsVisible] = useState(false);
   const elementReference = useRef(null);
