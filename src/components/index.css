@@ -78,3 +78,22 @@ body {
 .header-container p {
     font-size: 85%;
 }
+
+:root{
+    --electric-blue: #00e5ff;
+    --white: #ffffffff;
+    --lavender-web: #d6e7ff;
+    --penn-blue: #00265b;
+    --oxford-blue: #0c0c2e;
+    --deep-space-blue: #020410;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+body {
+background: url(../images/blue-astra.png) var(--deep-space-blue);
+background-repeat: no-repeat;
+font-family: "Pixelify Sans", sans-serif;
+color: var(--electric-blue);
+font-size: 150%;
+}

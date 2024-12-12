@@ -1,20 +1,13 @@
 import './reset.css';
-import './Main.css';
 import '../styles/Generics.css';
 import '../styles/Header_container.css';
-import './who_iam.css'
+import './WhoIam.css'
 import { useState } from 'react';
 import { useRef } from 'react';
 import { useEffect } from 'react';
 
 
-function Main() {
-  return (
-      <main className="who-iam-container">
-        <WhoIam></WhoIam>
-      </main>
-  );
-}
+
 
 function ScrollAnimation({ children }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -64,4 +57,5 @@ function WhoIam() {
   )
 }
 
-export default Main;
+
+export default WhoIam;
