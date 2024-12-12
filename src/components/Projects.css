@@ -1,0 +1,33 @@
+.projects-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    row-gap: 20px;
+}
+
+.projects-section--title {
+    margin-bottom: 20%
+}
+
+.carrousel-container{
+    display: flex;
+    flex-direction: row;
+    height: 50%;
+    overflow: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    justify-content: space-between;
+    scrollbar-color: var(--electric-blue);
+}
+
+.carrousel-item {
+    margin: 0% 10%;
+    display: block;
+    height: 10%;
+    width: 30vw;
+    padding: 40%;
+    background-color: var(--electric-blue);
+}

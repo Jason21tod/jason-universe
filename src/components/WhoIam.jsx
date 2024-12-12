@@ -42,18 +42,16 @@ function ScrollAnimation({ children }) {
 
 function WhoIam() {
   return(
-    <ScrollAnimation >
-      <h2 className='generic-container--title'>Sobre Mim</h2>
-      <p className='generic-container--paragraph'>
-        Olá, me chamo Gian Pereira e tenho 22 anos.
-        Atúo no mercado de desenvolvimento desde os 20 anos com meu primeiro projeto para o Clara Resorts,
-        o qual, foi o unico maior projeto qual participei.
-      </p>
-      <p className='generic-container--paragraph'>
-        Meu principal foco em desenvolvimento de soluções de automação web, desenvolvimento de sites e melhorias
-        de processos empresariais.
-      </p>
-    </ScrollAnimation>
+    <section className='who-iam-container'>
+      <ScrollAnimation >
+        <h2 className='generic-container--title'>Sobre Mim</h2>
+        <p className='generic-container--paragraph'>
+          Olá, me chamo Gian Pereira e tenho 22 anos. Sou desenvolvedor Fullstack e atuo desenvolvo soluções web.
+          Meu principal foco em desenvolvimento de soluções de automação, desenvolvimento de sites e melhorias
+          de processos empresariais e relacionados ao cliente.
+        </p>
+      </ScrollAnimation>
+    </section>
   )
 }
 
