@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import React, { useState, cloneElement } from 'react'
+
 import './Projects.css'
 
 function Projects () {
@@ -20,40 +21,44 @@ function Projects () {
 
 function CarrouselContainer ({children}) {
     const [carrouselState, setCarrousel] = useState('carrousel_container');
-    function expandMyContainer () {
-        if (carrouselState === 'carrousel_container') {
-            setCarrousel('carrousel_container--expanded')
-        }
-        if (carrouselState === 'carrousel_container--expanded') {
-            setCarrousel('carrousel_container')
-        }
+    
+    function expandMyContainer() {
+        setCarrousel((prevState) =>
+            prevState === 'carrousel_container'
+                ? 'carrousel_container--expanded'
+                : 'carrousel_container'
+        );
     }
+
+    // Criando um componente modificado, usando a clonagem
+
+    const modifiedChildren = React.Children.map(children, (child) => {
+        if (React.isValidElement(child)) {
+            console.log("modfy container infos")
+            const newClassName = `${child.props.className || 'carrousel_item'} 
+            ${ carrouselState === 'carrousel_container--expanded'
+                ? 'carrousel_item--active'
+                : 'carrousel_item'
+            }
+            `.trim();
+
+            return  cloneElement(child, {className: newClassName});
+        }
+        return child;
+    });
 
     return (
         <div className={carrouselState} onClick={expandMyContainer}>
-            {children}
+            {modifiedChildren}
         </div>
     )
 }
 
 
-function CarrousselItem () {
-    const [carrouselState, setCarrousel] = useState('carrousel_item');
-    
-
-    function shoMyCarrousel () {
-        if (carrouselState === 'carrousel_item') {
-            setCarrousel('carrousel_item--active');
-            return
-            
-        } if (carrouselState === 'carrousel_item--active'){
-            setCarrousel('carrousel_item');
-            return
-        };
-    }
+function CarrousselItem ( {className} ) {
 
     return (
-        <span className={carrouselState} onClick={shoMyCarrousel}>
+        <span className={className}>
         </span>
     )
 }
