@@ -13,15 +13,59 @@
 
 .lets_work-legend {
     text-align: center;
-    margin-bottom: 20%;
+    margin-bottom: 15%;
+    color: var(--electric-blue);
+}
+
+.lets_work-form_area {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    justify-items: start;
+}
+
+.lets_work-img {
+    background-color: var(--electric-blue);
+    width: 45%;
+    align-self: center;
+    height: 120px;
+    margin-bottom: 10%;
 }
 
 .lets_work-form {
     display: flex;
     flex-direction: column;
+    row-gap: 10px;
+}
+
+
+.lets_work-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    margin-bottom: 15%;
 }
 
 .lets_work-form button {
     width: 60%;
+    margin-top: 10%;
     align-self: center;
+    padding: 5%;
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-size: 25px;
+    background-color: var(--lavender-web);
+}
+
+.lets_work-form input {
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    color: var(--lavender-web);
+    font-family: var(--font-family);
+    height: 24px;
+    text-anchor: end;
+    font-size: 93%;
+    margin-left: 3%;
 }
