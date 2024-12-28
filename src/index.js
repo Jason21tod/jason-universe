@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import WhoIam from './components/WhoIam.jsx';
 import Projects from './components/Projects.jsx';
 import Header from './components/header/Header.jsx';
+import WhereFindMe from './components/WhereFindMe.jsx';
 import reportWebVitals from './reportWebVitals.js';
 import './components/index.css'
 
@@ -13,6 +14,7 @@ root.render(
     <main>
       <WhoIam />
       <Projects />
+      <WhereFindMe />
     </main>
   </React.StrictMode>
 );

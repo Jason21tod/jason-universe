@@ -1,21 +1,28 @@
 import React, { useState, cloneElement } from 'react'
+import ScrollAnimation from './utils/text_animations';
 
 import './Projects.css'
 
 function Projects () {
 
     return (
-        <section className="projects_section">
-            <h2 className='projects_section--title'>Meus projetos</h2>
-            <CarrouselContainer>
-                <CarrousselItem/>
-                <CarrousselItem/>
-            </CarrouselContainer>
-            <CarrouselContainer>
-                <CarrousselItem/>
-            </CarrouselContainer>
-            <CarrouselContainer></CarrouselContainer>
-        </section>
+        <ScrollAnimation>
+            <section className="projects_section">
+                <h2 className='projects_section--title'>Meus projetos</h2>
+                <CarrouselContainer>
+                    <CarrousselItem/>
+                    <CarrousselItem/>
+                </CarrouselContainer>
+                <CarrouselContainer>
+                    <CarrousselItem/>
+                </CarrouselContainer>
+                <CarrouselContainer>
+                    <CarrousselItem/>
+                    <CarrousselItem/>
+                    <CarrousselItem/>
+                </CarrouselContainer>
+            </section>
+        </ScrollAnimation>
     )
 }
 
