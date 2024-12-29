@@ -4,6 +4,7 @@ import WhoIam from './components/WhoIam.jsx';
 import Projects from './components/Projects.jsx';
 import Header from './components/header/Header.jsx';
 import LetsWorkTogether from './components/LetsWorkTogether.jsx';
+import Footer from './components/Footer.jsx';
 
 import WhereFindMe from './components/WhereFindMe.jsx';
 import reportWebVitals from './reportWebVitals.js';
@@ -19,8 +20,8 @@ root.render(
       <WhereFindMe />
       <LetsWorkTogether/>
     </main>
-    <footer>
-      
+    <footer className='footer-container'>
+      <Footer/>
     </footer>
   </React.StrictMode>
 );

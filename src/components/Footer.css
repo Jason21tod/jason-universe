@@ -1,0 +1,11 @@
+.footer-container {
+    border-top: 1px solid;
+    border-color: aliceblue;
+    margin-bottom: 10%;
+    padding-top: 5%;
+}
+
+.footer-container {
+    opacity: 75%;
+    font-size: 18px;
+}
