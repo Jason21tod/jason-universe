@@ -2,7 +2,7 @@ import './LetsWorkTogether.css'
 
 function LetsWorkTogether () {
     return (
-        <section className="lets_work-section">
+        <section id='work-with-me' className="lets_work-section">
             <h2 className="lets_work-title">Work With Me</h2>
             <legend className="lets_work-legend">So let's build your universe?</legend>
             <div className='lets_work-form_area'>

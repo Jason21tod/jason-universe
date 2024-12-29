@@ -7,7 +7,7 @@ import ScrollAnimation from './utils/text_animations.jsx'
 
 function WhoIam() {
   return(
-    <section className='who-iam-container'>
+    <section id='about-section' className='who-iam-container'>
       <ScrollAnimation >
         <h2 className='generic-container--title'>Sobre Mim</h2>
         <p className='generic-container--paragraph'>

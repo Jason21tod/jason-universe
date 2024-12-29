@@ -3,7 +3,7 @@ import './WhereFindMe.css'
 
 function WhereFindMe () {
     return (
-        <section className="findme_container">
+        <section id='find-me' className="findme_container">
             <h2>Where Find Me</h2>
             <p>Aproveita pra seguir :3</p>
             <div className='findme_container--label'>

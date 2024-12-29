@@ -5,6 +5,7 @@ import Projects from './components/Projects.jsx';
 import Header from './components/header/Header.jsx';
 import LetsWorkTogether from './components/LetsWorkTogether.jsx';
 import Footer from './components/Footer.jsx';
+import Navigation from './components/Navigation.jsx';
 
 import WhereFindMe from './components/WhereFindMe.jsx';
 import reportWebVitals from './reportWebVitals.js';
@@ -13,6 +14,7 @@ import './components/index.css'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Navigation/>
     <Header />
     <main>
       <WhoIam />
