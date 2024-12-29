@@ -14,8 +14,8 @@ function LetsWorkTogether () {
                     <input type="email" name="email" id="email" />
                     <label htmlFor="proposal">Proposal: </label> 
                     <input type="text" name="proposal" id="email"/>
-                    <button type="submit">Lets Go!</button>
                 </form>
+                <button>Lets Go!</button>
             </div>
         </section>
     )

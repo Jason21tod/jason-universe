@@ -24,6 +24,27 @@
     justify-items: start;
 }
 
+
+.lets_work-form_area button {
+    width: 60%;
+    margin-top: 5%;
+    margin-bottom: 3%;
+    align-self: center;
+    padding: 5%;
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-size: 25px;
+    background-color: var(--lavender-web);
+    border: none;
+    border-radius: 5%;
+    transition: all 0.2s;
+}
+
+.lets_work-form_area button:active {
+    background-color: aqua;
+    scale: 105%;
+}
+
 .lets_work-img {
     background-color: var(--electric-blue);
     width: 45%;
@@ -42,20 +63,10 @@
 .lets_work-form {
     display: flex;
     flex-direction: column;
-    row-gap: 10px;
+    row-gap: 16px;
     margin-bottom: 15%;
 }
 
-.lets_work-form button {
-    width: 60%;
-    margin-top: 10%;
-    align-self: center;
-    padding: 5%;
-    font-family: var(--font-family);
-    font-weight: 800;
-    font-size: 25px;
-    background-color: var(--lavender-web);
-}
 
 .lets_work-form input {
     background-color: transparent;
@@ -67,5 +78,14 @@
     height: 24px;
     text-anchor: end;
     font-size: 93%;
-    margin-left: 3%;
+    margin-left: 10%;
+    transition-duration: 0.66s;
 }
+
+.lets_work-form input:focus {
+    border-color: var(--electric-blue) !important;
+    outline: none;
+    margin-left: 0%;
+}
+
+

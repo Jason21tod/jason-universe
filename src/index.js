@@ -19,6 +19,9 @@ root.render(
       <WhereFindMe />
       <LetsWorkTogether/>
     </main>
+    <footer>
+      
+    </footer>
   </React.StrictMode>
 );
 
