@@ -21,10 +21,10 @@ function Navigation () {
             </div>
             <nav className={`navigation_container-links ${menuState}`}>
                 <ToggleMenu handleClick={handleClick}></ToggleMenu>
-                <a href="#about-section">About me</a>
-                <a href="#projects-section">Projects</a>
-                <a href="#find-me">Find Me</a>
-                <a href="#work-with-me">Work With Me</a>
+                <a onClick={handleClick} href="#about-section">About Me</a>
+                <a onClick={handleClick} href="#projects-section">Projects</a>
+                <a onClick={handleClick} href="#find-me">Find Me</a>
+                <a onClick={handleClick} href="#work-with-me">Work With Me</a>
             </nav>
         </div>
     )

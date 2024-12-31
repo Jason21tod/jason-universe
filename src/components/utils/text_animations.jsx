@@ -32,4 +32,27 @@ function ScrollAnimation({ children }) {
   }
 
 
+  function WordPopup ({word, anim_time, delay_coefficient}) {
+    let anim_config = `${"fadeInY "+anim_time}`;
+   return (
+     <p>
+       {Array.from(word).map((char, index) => (
+         <span
+           key={index}
+           style={{
+             animation: anim_config, //Hoje aprendi a criar uma animação :D
+             animationDelay: `${index * delay_coefficient}s`,
+             display: "inline-block",
+             fontSize: "45px"
+           }}
+         >
+           {char === " " ? "\u00A0" : char}
+         </span>
+         )
+       )}
+     </p>
+   )
+}
+
+export {WordPopup};
 export default ScrollAnimation;

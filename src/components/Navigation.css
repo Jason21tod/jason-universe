@@ -61,8 +61,6 @@
     justify-content: center;
     align-self: center;
     line-height: 136%;
-    transition-duration: 1s;
-    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .navigation_container-links a {
@@ -76,11 +74,22 @@
 }
 
 .navigation_container-links--inactive {
-    left: 100%;
-    transition-duration: 1s;
+    right: 100%;
+    transition-property: all;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in-out;
 }
 
 .navigation_container-links--active {
+    animation: links_activation 0.25s ease-in-out;
     right: 26%;
-    transition-duration: 1s;
+}
+
+@keyframes links_activation {
+    0% {
+        right: 100%
+    }
+    100% {
+        right: 26%;
+    }
 }
