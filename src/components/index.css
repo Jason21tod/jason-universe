@@ -87,6 +87,7 @@ body {
     --oxford-blue: #0c0c2e;
     --deep-space-blue: #020410;
     --font-family: "Pixelify Sans", sans-serif;
+    --top-bar-size-adjust: 86px;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');

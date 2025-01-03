@@ -6,7 +6,7 @@
     text-align: center;
     row-gap: 20px;
     margin-bottom: 50%;
-    padding-top: 15%;
+    padding-top: var(--top-bar-size-adjust);
 }
 
 .projects_section--title {

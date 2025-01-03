@@ -9,7 +9,7 @@
     background-color: var(--deep-space-blue);
     position: fixed;
     top: 0px;
-    height: 12%;
+    height: var(--top-bar-size-adjust);
     width: 100%;
 }
 
