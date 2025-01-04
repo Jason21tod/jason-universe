@@ -6,7 +6,7 @@ import './Projects.css'
 
 let project_data_test = {
     name: 'Project name',
-    description: 'Description of a incrideable project made by myself and did '
+    description: 'Description of a increadeable project made by myself and did '
 }
 
 
@@ -74,7 +74,9 @@ function CarrousselItem ( {className, projectData} ) {
     return (
         <span className={className}>
             <h3>{projectData.name}</h3>
-            <img className='carrousel_item--placeholder' src="#" alt="project_placeholder" />
+            <img className='carrousel_item--placeholder' srcSet="
+            ../images/astra-planet-64x64.png
+            ../images/astra-planet-128x128.png" alt="project_placeholder" />
             <p>{projectData.description}</p>
             <button>Take a Look</button>
         </span>
