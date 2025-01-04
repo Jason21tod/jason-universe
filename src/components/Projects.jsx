@@ -29,7 +29,7 @@ function Projects () {
 function CarrouselContainer ({children}) {
     const [carrouselState, setCarrousel] = useState('carrousel_container');
     
-    function expandMyContainer() {
+    function expandContainer() {
         setCarrousel((prevState) =>
             prevState === 'carrousel_container'
                 ? 'carrousel_container--expanded'
@@ -41,7 +41,7 @@ function CarrouselContainer ({children}) {
 
     const modifiedChildren = React.Children.map(children, (child) => {
         if (React.isValidElement(child)) {
-            console.log("modfy container infos")
+            console.log("modify container infos")
             const newClassName = `${child.props.className || 'carrousel_item'} 
             ${ carrouselState === 'carrousel_container--expanded'
                 ? 'carrousel_item--active'
@@ -55,7 +55,7 @@ function CarrouselContainer ({children}) {
     });
 
     return (
-        <div className={carrouselState} onClick={expandMyContainer}>
+        <div className={carrouselState}  onClick={expandContainer}>
             {modifiedChildren}
         </div>
     )

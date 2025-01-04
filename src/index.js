@@ -19,10 +19,10 @@ root.render(
     <main>
       <WhoIam />
       <Projects />
-      <WhereFindMe />
       <LetsWorkTogether/>
     </main>
     <footer className='footer-container'>
+      <WhereFindMe />
       <Footer/>
     </footer>
   </React.StrictMode>
