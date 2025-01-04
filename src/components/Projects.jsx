@@ -3,6 +3,13 @@ import ScrollAnimation from './utils/text_animations';
 
 import './Projects.css'
 
+
+let project_data_test = {
+    name: 'Project name',
+    description: 'Description of a incrideable project made by myself and did '
+}
+
+
 function Projects () {
 
     return (
@@ -42,14 +49,13 @@ function CarrouselContainer ({children}) {
     const modifiedChildren = React.Children.map(children, (child) => {
         if (React.isValidElement(child)) {
             console.log("modify container infos")
-            const newClassName = `${child.props.className || 'carrousel_item'} 
+            const newClassName = `${child.props.className || 'carrousel_item'}
             ${ carrouselState === 'carrousel_container--expanded'
-                ? 'carrousel_item--active'
-                : 'carrousel_item'
+                ? 'carrousel_item carrousel_item--active'
+                : 'carrousel_item carrousel_item--inactive'
             }
             `.trim();
-
-            return  cloneElement(child, {className: newClassName});
+            return  cloneElement(child, {className: newClassName, projectData: project_data_test});
         }
         return child;
     });
@@ -62,10 +68,15 @@ function CarrouselContainer ({children}) {
 }
 
 
-function CarrousselItem ( {className} ) {
+function CarrousselItem ( {className, projectData} ) {
 
+    console.log(`New project: ${projectData.name}`)
     return (
         <span className={className}>
+            <h3>{projectData.name}</h3>
+            <img className='carrousel_item--placeholder' src="#" alt="project_placeholder" />
+            <p>{projectData.description}</p>
+            <button>Take a Look</button>
         </span>
     )
 }

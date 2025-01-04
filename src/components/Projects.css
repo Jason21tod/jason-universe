@@ -36,26 +36,70 @@
     overflow: scroll;
     overflow-y: hidden;
     scroll-behavior: smooth;
-    justify-content: space-between;
+    justify-content: space-evenly;
     scrollbar-color: var(--electric-blue);
     transition: 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 }
 
 .carrousel_item {
+    display: flex;
+    flex-direction: column;
+    color: var(--penn-blue);
     margin: 0% 10%;
-    height: 10%;
-    width: 30vw;
-    padding: 40%;
     background-color: var(--electric-blue);
+    padding: 23px 10px 15% 10px;
+    text-align: center;
+    width: 150vw;
+    row-gap: 10px;
+}
+
+.carrousel_item h3 {
+    font-size: 150%;
+    font-weight: 800;
+}
+
+.carrousel_item button {
+    background-color: var(--penn-blue);
+    color: var(--electric-blue);
+    border: none;
+    border-radius: 5%;
+    padding: 8%;
+    font-size: 90%;
+}
+
+.carrousel_item button:active {
+    background-color: black;
+}
+
+
+.carrousel_item--placeholder {
+    background-color: var(--deep-space-blue);
+}
+
+.carrousel_item--inactive {
+    padding: 23px 8px 15% 8px;
+    height: 50%;
     transition: 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 }
 
+.carrousel_item--inactive p {
+    opacity: 0%;
+    transition: 0.8s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
 .carrousel_item--active {
+    height: 100%;
     position: relative;
-    margin: 0% 10%;
-    display: flex;
-    height: 60%;
-    padding: 40%;
-    background-color: var(--electric-blue);
     transition: 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+.carrousel_item--active p {
+    opacity: 100%;
+    transition: 0.8s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    font-size: 18px;
+}
+
+.carrousel_item--active button {
+    opacity: 100%;
+    transition: 0.8s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 }
