@@ -74,9 +74,6 @@ function CarrousselItem ( {className, projectData} ) {
     return (
         <span className={className}>
             <h3>{projectData.name}</h3>
-            <img className='carrousel_item--placeholder' srcSet="
-            ../images/astra-planet-64x64.png
-            ../images/astra-planet-128x128.png" alt="project_placeholder" />
             <p>{projectData.description}</p>
             <button>Take a Look</button>
         </span>

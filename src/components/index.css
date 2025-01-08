@@ -95,7 +95,7 @@ body {
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 
 body {
-background: url(../images/blue-astra.png) var(--deep-space-blue);
+background: url(/public/images/blue-astra.png) var(--deep-space-blue);
 background-repeat: no-repeat;
 font-family: "Pixelify Sans", sans-serif;
 color: var(--electric-blue);
