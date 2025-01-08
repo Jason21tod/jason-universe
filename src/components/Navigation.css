@@ -60,13 +60,18 @@
     text-align: center;
     justify-content: center;
     align-self: center;
-    line-height: 136%;
+    line-height: 26px;
+    row-gap: 24px;
 }
 
 .navigation_container-links a {
     padding-left: 25%;
     list-style: none;
     text-decoration: none;
+}
+
+.navigation_container-links a:active {
+    background-color: black;
 }
 
 .navigation_container-links a:visited {

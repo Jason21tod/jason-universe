@@ -23,7 +23,6 @@ function Navigation () {
                 <ToggleMenu handleClick={handleClick}></ToggleMenu>
                 <a onClick={handleClick} href="#about-section">About Me</a>
                 <a onClick={handleClick} href="#projects-section">Projects</a>
-                <a onClick={handleClick} href="#find-me">Find Me</a>
                 <a onClick={handleClick} href="#work-with-me">Work With Me</a>
             </nav>
         </div>
