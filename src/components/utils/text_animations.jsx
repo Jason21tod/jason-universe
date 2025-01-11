@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 
-function ScrollAnimation({ children }) {
+function ScrollAnimation({ children, className }) {
     const [isVisible, setIsVisible] = useState(false);
     const elementReference = useRef(null);
   
@@ -24,7 +24,7 @@ function ScrollAnimation({ children }) {
     return (
       <div
         ref={elementReference}
-        className={isVisible ? "generic-container generic-container--visible":"generic-container generic-container--hidden"}
+        className={isVisible ? `${className} scroll-animation scroll-animation--visible`:`${className} scroll-animation scroll-animation--hidden`}
         >
         {children}
       </div>

@@ -13,7 +13,7 @@ let project_data_test = {
 function Projects () {
 
     return (
-        <ScrollAnimation>
+        <ScrollAnimation className={'projects-container'}>
             <section id='projects-section' className="projects_section">
                 <h2 className='projects_section--title'>Meus projetos</h2>
                 <CarrouselContainer>

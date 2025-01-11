@@ -2,7 +2,7 @@
 
 
 @media screen and (min-width:1200px) {
-  .generic-container {
+  .scroll-animation {
     display: flex;
     width: 40%;
     flex-direction: column;
@@ -18,7 +18,7 @@
 }
 
 @media screen and (max-width:400px) {
-  .generic-container {
+  .scroll-animation {
     display: flex;
     padding: 0% 5%;
     display: flex;
@@ -27,26 +27,26 @@
     justify-content: center;
     margin-bottom: 15%;
     line-height: 130%;
-}
+  }
 
-  .generic-container--visible {
+  .scroll-animation--visible {
     opacity: 1;
     transform: translateY(0);
     transition: opacity 2.6s ease-out, transform  1s ease-in;
   }
 
-  .generic-container--hidden {
+  .scroll-animation--hidden {
     opacity: 0;
     transform: translateY(20px);
   }
 
-  .generic-container--title {
+  .scroll-animation--title {
     font-size: 32px;
     grid-row: 1;
     grid-column: 1;
   }
 
-  .generic-container--paragraph {
+  .scroll-animation--paragraph {
     margin-top: 5%;
     grid-row: 2;
   }
