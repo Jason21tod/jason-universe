@@ -21,6 +21,9 @@ function WhoIam() {
           Desenvolvo/desenvolvi soluções de chat; Pedidos Online; Sites simples; automações de escala de trabalho; Hotelaria e mais;
         </p>
       </ScrollAnimation>
+      <ScrollAnimation>
+        <img id='image_collections' src="./images/astra-planet-64x64.png" alt="collection of projects" />
+      </ScrollAnimation>
     </section>
   )
 }
