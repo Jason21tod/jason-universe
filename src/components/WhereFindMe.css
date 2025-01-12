@@ -6,3 +6,12 @@
     flex-direction: column;
     row-gap: 10px;
 }
+@media screen and (min-width:1024px) {
+    .findme_container {
+        margin-top: 5%;
+    }
+
+    .findme_container h2 {
+        margin-bottom: 3%;
+    }
+}

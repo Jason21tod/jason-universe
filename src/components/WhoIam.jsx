@@ -22,7 +22,7 @@ function WhoIam() {
         </p>
       </ScrollAnimation>
       <ScrollAnimation>
-        <img id='image_collections' src="./images/astra-planet-64x64.png" alt="collection of projects" />
+        <img id='planet' src="./images/astra-planet-64x64.png" alt="collection of projects" />
       </ScrollAnimation>
     </section>
   )

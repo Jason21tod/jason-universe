@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 
-function ScrollAnimation({ children, className }) {
+function ScrollAnimation({ children, className='' }) {
     const [isVisible, setIsVisible] = useState(false);
     const elementReference = useRef(null);
   

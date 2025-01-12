@@ -73,9 +73,10 @@
 }
 
 
-@media screen and (min-width:1200px) {
+@media screen and (min-width:1024px) {
     .projects-container {
         width: 100%;
+        margin-bottom: 100vh;
     }
 
     .projects_section {
@@ -96,7 +97,7 @@
         overflow: scroll;
         overflow-y: hidden;
         scroll-behavior: smooth;
-        justify-content: space-between;
+        justify-content: space-around;
         scrollbar-color: var(--electric-blue);
         transition: 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
     }

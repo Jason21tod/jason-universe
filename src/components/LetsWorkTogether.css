@@ -91,3 +91,32 @@
 }
 
 
+@media screen and (min-width:1024px) {
+    .lets_work-section {
+        height: 100vh;
+        display: flex;
+        row-gap: 12px;
+        padding-top: 20%;
+        padding-bottom: 20%;
+        margin-bottom: 5%;
+    }
+    
+    .lets_work-title {
+        margin-bottom: 1%;
+        text-align: center;
+    }
+
+    .lets_work-legend {
+        margin-bottom: 5%;
+    }
+
+    
+    .lets_work-img {
+        background-color: var(--electric-blue);
+        width: 256px;
+        align-self: center;
+        height: 256px;
+        margin-bottom: 5%;
+    }
+
+}

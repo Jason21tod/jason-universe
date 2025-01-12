@@ -91,7 +91,11 @@ body {
     --carrousel-animation-timing: 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
     --carrousel-animation-timing-after: 0.8s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 }
-
+@media screen and (min-width:1024px) {
+    :root {
+        --top-bar-size-adjust: 35%;
+    }
+}
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 
 body {
