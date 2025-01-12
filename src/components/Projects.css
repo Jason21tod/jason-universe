@@ -102,6 +102,10 @@
         transition: 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
     }
 
+    .carrousel_container::-webkit-scrollbar {
+        background-color: transparent;
+    }
+
     .carrousel_container--expanded {
         display: flex;
         flex-direction: row;
@@ -117,9 +121,12 @@
         transition: var(--carrousel-animation-timing);
     }
 
-    ::-webkit-scrollbar-track {
-        background: #f1f1f1;
+    
+    .carrousel_container--expanded::-webkit-scrollbar {
+        background-color: transparent;
     }
+
+
 }
 
 
