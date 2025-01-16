@@ -1,14 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import WhoIam from './components/WhoIam.jsx';
-import Projects from './components/Projects.jsx';
-import Header from './components/header/Header.jsx';
-import LetsWorkTogether from './components/LetsWorkTogether.jsx';
-import Footer from './components/Footer.jsx';
-import Navigation from './components/Navigation.jsx';
+import WhoIam from './components/sections/who_iam/WhoIam.jsx';
+import Projects from './components/sections/projects/Projects.jsx';
+import Header from './components/sections/header/Header.jsx';
+import LetsWorkTogether from './components/sections/work_together/LetsWorkTogether.jsx';
+import Footer from './components/sections/footer/Footer.jsx';
+import Navigation from './components/sections/navigation/Navigation.jsx';
 
-import WhereFindMe from './components/WhereFindMe.jsx';
+import WhereFindMe from './components/sections/where_find_me/WhereFindMe.jsx';
 import reportWebVitals from './reportWebVitals.js';
+
+import './styles/reset.css';
+import './styles/generics.css'
 import './components/index.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

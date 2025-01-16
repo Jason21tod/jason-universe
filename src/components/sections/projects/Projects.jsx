@@ -1,5 +1,5 @@
 import React, { useState, cloneElement } from 'react'
-import ScrollAnimation from './utils/text_animations';
+import ScrollAnimation from '../../utils/text_animations';
 
 import './Projects.css'
 

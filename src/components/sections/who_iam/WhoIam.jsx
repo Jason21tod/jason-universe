@@ -1,8 +1,5 @@
-import './reset.css';
-import '../styles/Generics.css';
-import '../styles/Header_container.css';
 import './WhoIam.css'
-import ScrollAnimation from './utils/text_animations.jsx'
+import ScrollAnimation from '../../utils/text_animations.jsx'
 
 
 function WhoIam() {

@@ -1,4 +1,5 @@
-import { WordPopup } from "../utils/text_animations";
+import { WordPopup } from "../../utils/text_animations";
+import './Header_container.css';
 
 
 function Header() {
