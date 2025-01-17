@@ -1,5 +1,7 @@
 import './LetsWorkTogether.css'
 
+import check_server_connection from '../../../middleware/api_services';
+
 function LetsWorkTogether () {
     return (
         <section id='work-with-me' className="lets_work-section">
@@ -15,7 +17,7 @@ function LetsWorkTogether () {
                     <label htmlFor="proposal">Proposal: </label> 
                     <input type="text" name="proposal" id="email"/>
                 </form>
-                <button>Let's Go!</button>
+                <button onClick={check_server_connection}>Let's Go!</button>
             </div>
         </section>
     )
