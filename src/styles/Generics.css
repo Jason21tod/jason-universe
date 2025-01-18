@@ -4,7 +4,6 @@
 @media screen and (min-width:1024px) {
   .scroll-animation {
     display: flex;
-    width: 40%;
     flex-direction: column;
     margin-top: 5%;
   }

@@ -30,7 +30,6 @@
     background-color: black;
 }
 
-
 .carrousel_item--placeholder {
     background-color: var(--deep-space-blue);
     overflow: hidden;
@@ -76,7 +75,8 @@
 @media screen and (min-width:1024px) {
     .projects-container {
         width: 100%;
-        margin-bottom: 100vh;
+        margin-bottom: 70vh;
+        align-self: center;
     }
 
     .projects_section {
