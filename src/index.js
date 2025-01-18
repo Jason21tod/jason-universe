@@ -10,8 +10,6 @@ import Navigation from './components/sections/navigation/Navigation.jsx';
 import WhereFindMe from './components/sections/where_find_me/WhereFindMe.jsx';
 import reportWebVitals from './reportWebVitals.js';
 
-import './styles/reset.css';
-import './styles/generics.css'
 import './components/index.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
