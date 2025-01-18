@@ -7,7 +7,7 @@ let server_address = process.env.REACT_APP_SERVER;
 function check_server_connection () {
     
     try {
-        axios.get(server_address)
+        axios.get(`${server_address}/is_online`)
           .then(response => {
             console.log(response.data);
           })
