@@ -20,32 +20,48 @@ function LetsWorkTogether () {
         try {
           const response = await axios.get(server_address+"/is_online");
           if (response.status === 200) {
-                setServerStatus('online')
-                setPopup('--active')
-                setPopupType('success')
-                setPopupContent('Backend System Online. Welcome!')
-                console.log('sets as success')
+            changePopupExibition('online', 'Server connection stablished!')
+            console.log('connection success')
           } else {
-                setServerStatus('online')
-                setPopup('--active')
-                setPopupType('failed')
-                console.log('sets as failed')
+            changePopupExibition('online', 'Server is Offline...')
+            console.log('sets as failed')
           }
         } catch (error) {
-                setPopup('--active')
-                setPopupType('failed')
-                console.log('sets as failed')
-        } finally {
-            setTimeout(() => 
-                setPopup('--deactivated'),
-                8000
-            )
+            changePopupExibition('online', 'Backend Connection Offline')
+            console.log('failed failed')
         }
       };
   
       checkServerStatus();
     }, [])
 
+    const submitProposal = () => {
+        console.log('submiting proposal')
+        if (server_status === 'offline') {
+            console.log('server is down')
+            changePopupExibition('online', 'Server is Offline...')
+        } else {
+            console.log('proposal sended')
+            changePopupExibition('online', 'Proposal Sended!')
+        }
+    }
+
+    const changePopupExibition = (server_context, message, timer=3000) => {
+        setPopup('--active')
+        if (server_context === 'offline') {
+            setServerStatus(server_context)
+            setPopupType('failed')
+            setPopupContent(message)
+        } else {
+            setServerStatus('online')
+            setPopupType('success')
+            setPopupContent(message)
+        }
+        setTimeout(() => 
+            setPopup('--deactivated'),
+            timer
+        )
+    }
 
     return (
         <section id='work-with-me' className="lets_work-section">
@@ -62,7 +78,7 @@ function LetsWorkTogether () {
                     <label htmlFor="proposal">Proposal: </label> 
                     <input type="text" name="proposal" id="email"/>
                 </form>
-                <button>Let's Go!</button>
+                <button onClick={submitProposal}>Let's Go!</button>
             </div>
         </section>
     )
