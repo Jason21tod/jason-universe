@@ -27,8 +27,8 @@
 }
 
 
-.lets_work-form_area button {
-    width: 60%;
+.lets_work-submit {
+    width: 100%;
     margin-top: 5%;
     margin-bottom: 3%;
     align-self: center;
@@ -38,11 +38,12 @@
     font-size: 25px;
     background-color: var(--lavender-web);
     border: none;
-    border-radius: 5%;
+    border-radius: 12px;
     transition: all 0.2s;
+    align-self: center;
 }
 
-.lets_work-form_area button:active {
+.lets_work-submit:active {
     background-color: aqua;
     scale: 105%;
 }
@@ -92,6 +93,13 @@
 
 
 @media screen and (min-width:1024px) {
+    .lets_work-form_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     .lets_work-section {
         height: 90vh;
         display: flex;
@@ -124,10 +132,11 @@
         flex-direction: column;
         row-gap: 16px;
         margin-bottom: 3%;
+        width: 100%;
     }
 
-    .lets_work-form_area button {
-        width: 30%;
+    .lets_work-submit {
+        width: 50%;
         margin-top: 1%;
         padding: 3%;
     }

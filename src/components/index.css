@@ -56,7 +56,7 @@ body {
     
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 414px) {
     h1 {
         font-size: 120%;
     }

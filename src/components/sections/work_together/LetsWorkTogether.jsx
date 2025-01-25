@@ -23,12 +23,12 @@ function LetsWorkTogether () {
             changePopupExibition('online', 'Server connection stablished!')
             console.log('connection success')
           } else {
-            changePopupExibition('online', 'Server is Offline...')
-            console.log('sets as failed')
+            changePopupExibition('offline', 'Server is Offline...')
+            console.log('connection failed')
           }
         } catch (error) {
-            changePopupExibition('online', 'Backend Connection Offline')
-            console.log('failed failed')
+            changePopupExibition('offline', 'Backend Connection Offline')
+            console.log('connection failed')
         }
       };
   
@@ -39,10 +39,11 @@ function LetsWorkTogether () {
         console.log('submiting proposal')
         if (server_status === 'offline') {
             console.log('server is down')
-            changePopupExibition('online', 'Server is Offline...')
+            changePopupExibition('offline', 'Server is Offline...')
         } else {
             console.log('proposal sended')
-            changePopupExibition('online', 'Proposal Sended!')
+            changePopupExibition('online', 'Sending proposal...')
+
         }
     }
 
@@ -63,6 +64,29 @@ function LetsWorkTogether () {
         )
     }
 
+    function handleSubmit(event) {
+        event.preventDefault()
+        const formData = event.target.elements
+        console.log(formData.name.value)
+        console.log(formData.email.value)
+        console.log(formData.proposal.value)
+        submitProposal()
+        axios.post(server_address+'/email_service/', {
+            name: formData.name.value,
+            email: formData.email.value,
+            about: formData.proposal.value,
+            cellphone: ''
+        }).then(response => {
+            console.log(response)
+            if (response.data['status']==='success') {
+                changePopupExibition('online', 'Proposal sended, keep eyes on your email')
+            }
+        }).catch(error=> {
+            console.log(error)
+            changePopupExibition('offline', 'Server is down or unreacheable')
+        })
+    }
+
     return (
         <section id='work-with-me' className="lets_work-section">
             <SidePopup popup_status={popup} type={popup_type} content={popup_content} anim_duration='3s'/>
@@ -70,15 +94,17 @@ function LetsWorkTogether () {
             <legend className="lets_work-legend">So let's build your universe?</legend>
             <div className='lets_work-form_area'>
                 <img src="" alt="universe" className="lets_work-img"/>
-                <form className="lets_work-form">
-                    <label htmlFor="name">Name: </label>
-                    <input type="text" name="name" id="name" />
-                    <label htmlFor="email">Email: </label>
-                    <input type="email" name="email" id="email" />
-                    <label htmlFor="proposal">Proposal: </label> 
-                    <input type="text" name="proposal" id="email"/>
+                <form method='post' onSubmit={handleSubmit} className='lets_work-form_container' >
+                    <div className='lets_work-form'>
+                        <label required htmlFor="name">Name: </label>
+                        <input required type="text" name="name" id="name" />
+                        <label required htmlFor="email">Email: </label>
+                        <input required type="email" name="email" id="email" />
+                        <label required htmlFor="proposal">Proposal: </label>
+                        <input required type="text" name="proposal" id="proposal"/>
+                    </div>
+                    <input className='lets_work-submit' type="submit" value="Enviar proposta" />
                 </form>
-                <button onClick={submitProposal}>Let's Go!</button>
             </div>
         </section>
     )
