@@ -16,7 +16,7 @@
     font-weight: 800;
 }
 
-.carrousel_item button {
+.carrousel_item a {
     background-color: var(--penn-blue);
     color: var(--electric-blue);
     border: none;
@@ -26,7 +26,7 @@
     transition: var(--carrousel-animation-timing);
 }
 
-.carrousel_item button:active {
+.carrousel_item a:active {
     background-color: black;
 }
 
@@ -44,7 +44,7 @@
     height: 50%;
 }
 
-.carrousel_item--inactive button {
+.carrousel_item--inactive a {
     display: none;
     opacity: 0%;
 }
@@ -65,7 +65,7 @@
     font-size: 18px;
 }
 
-.carrousel_item--active button {
+.carrousel_item--active a {
     display: inline-block;
     opacity: 100%;
     transition: var(--carrousel-animation-timing);
@@ -132,7 +132,7 @@
 
 
 
-@media screen and (max-width:400px) {
+@media screen and (max-width:435px) {
     .projects_section {
         height: 100vh;
         flex-direction: column;
@@ -196,7 +196,7 @@
         font-weight: 800;
     }
 
-    .carrousel_item button {
+    .carrousel_item a {
         background-color: var(--penn-blue);
         color: var(--electric-blue);
         border: none;
@@ -206,7 +206,7 @@
         transition: var(--carrousel-animation-timing);
     }
 
-    .carrousel_item button:active {
+    .carrousel_item a:active {
         background-color: black;
     }
 
@@ -225,7 +225,7 @@
         height: 50%;
     }
 
-    .carrousel_item--inactive button {
+    .carrousel_item--inactive a {
         display: none;
         opacity: 0%;
     }
@@ -246,7 +246,7 @@
         font-size: 18px;
     }
 
-    .carrousel_item--active button {
+    .carrousel_item--active a {
         display: inline-block;
         opacity: 100%;
         transition: var(--carrousel-animation-timing);

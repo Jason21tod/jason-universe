@@ -1,16 +1,39 @@
-import React, { useState, cloneElement } from 'react'
+import React, { useState, cloneElement, useEffect } from 'react'
 import ScrollAnimation from '../../utils/text_animations';
 
 import './Projects.css'
+import { checkServerStatus } from '../../../middleware/api_services';
+import axios from 'axios';
+
+
+let server_address = process.env.REACT_APP_SERVER;
 
 
 let project_data_test = {
     name: 'Project name',
-    description: 'Description of a increadeable project made by myself and did '
+    description: 'Description of a increadeable project made by myself and did ',
+    image_link: '/',
+    link: '/'
 }
+
+function project_factory() {
+    
+}
+
+let projects = []
 
 
 function Projects () {
+
+    useEffect(() => {
+        checkServerStatus(server_address+'/projects', axios.get, {}).then(response =>{
+            console.log(response)
+            console.log('server projects endpoint online')
+        }).catch(error => {
+            console.log(error)
+            console.log('could not connect to projects endpoint')
+        })
+    })
 
     return (
         <ScrollAnimation className={'projects-container'}>
@@ -43,9 +66,6 @@ function CarrouselContainer ({children}) {
                 : 'carrousel_container'
         );
     }
-
-    // Criando um componente modificado, usando a clonagem
-
     const modifiedChildren = React.Children.map(children, (child) => {
         if (React.isValidElement(child)) {
             console.log("modify container infos")
@@ -75,7 +95,8 @@ function CarrousselItem ( {className, projectData} ) {
         <span className={className}>
             <h3>{projectData.name}</h3>
             <p>{projectData.description}</p>
-            <button>Take a Look</button>
+            <img src={projectData.image_link} alt="" />
+            <a href={projectData.link}>Take a Look</a>
         </span>
     )
 }

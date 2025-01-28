@@ -3,7 +3,7 @@ import './LetsWorkTogether.css'
 import SidePopup from '../../Notifications';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import { checkServerStatus } from '../../../middleware/api_services';
 
 let server_address = process.env.REACT_APP_SERVER;
 
@@ -16,23 +16,13 @@ function LetsWorkTogether () {
     const [popup_content, setPopupContent] = useState('Backend System Is Offline :(')
 
     useEffect(() => {
-    const checkServerStatus = async () => {
-        try {
-          const response = await axios.get(server_address+"/is_online");
-          if (response.status === 200) {
-            changePopupExibition('online', 'Server connection stablished!')
-            console.log('connection success')
-          } else {
-            changePopupExibition('offline', 'Server is Offline...')
-            console.log('connection failed')
-          }
-        } catch (error) {
-            changePopupExibition('offline', 'Backend Connection Offline')
-            console.log('connection failed')
-        }
-      };
-  
-      checkServerStatus();
+        checkServerStatus(server_address+'/email_service', axios.post, dataFactory('name', 'test@gmail.com', 'my proposal test')).then(response=> {
+            if (response===200) {
+                changePopupExibition('online', 'Server connection stablished!')
+            } else {
+                changePopupExibition('offline', 'Server is Offline...')
+            }
+        });
     }, [])
 
     const submitProposal = () => {
@@ -64,12 +54,18 @@ function LetsWorkTogether () {
         )
     }
 
+    function dataFactory(name, email, proposal) {
+        console.log('Name: '+name)
+        console.log('Email: '+email)
+        console.log('Proposal: '+proposal)
+        return {
+            name: name, email:email, about:proposal, cellphone: ''
+        }
+    }
+
     function handleSubmit(event) {
         event.preventDefault()
         const formData = event.target.elements
-        console.log(formData.name.value)
-        console.log(formData.email.value)
-        console.log(formData.proposal.value)
         submitProposal()
         axios.post(server_address+'/email_service/', {
             name: formData.name.value,

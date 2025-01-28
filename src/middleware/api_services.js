@@ -1,20 +1,17 @@
-
-let server_address = process.env.REACT_APP_SERVER;  
-
-
-
-function verifyIsServerOnline() {
+const checkServerStatus = async (address, axios_method, data={}) => {
   try {
-    const response = fetch(`${server_address}/is_online`)
-    const data = response.then
-    console.log(data)
-    return data
-  } catch(error){
-    console.log(error)
-    return {
-      online: false
+    const response = await axios_method(address, data);
+    if (response.status === 200) {
+      console.log('connection success')
+      return response.status
+    } else {
+      console.log('connection failed')
+      return response.status
     }
+  } catch (error) {
+      console.log('connection failed')
+      return 400
   }
-}
+};
 
-export default verifyIsServerOnline;
+export {checkServerStatus};

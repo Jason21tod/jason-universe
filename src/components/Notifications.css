@@ -15,7 +15,7 @@
     background-color: rgb(133, 10, 10);
 }
 
-@media screen and (max-width:414px) {
+@media screen and (max-width:435px) {
     .side_popup {
         width: 60%;
         padding: 5%;
