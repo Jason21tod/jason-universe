@@ -1,3 +1,11 @@
+.projects-container {
+    margin-top: 10vh;
+}
+
+.projects_section--title {
+    position: static;
+}
+
 .carrousel_item {
     display: flex;
     flex-direction: column;
@@ -57,6 +65,7 @@
 .carrousel_item--active {
     height: 100%;
     transition: var(--carrousel-animation-timing);
+    width: 500px;
 }
 
 .carrousel_item--active p {
@@ -97,7 +106,6 @@
         overflow: scroll;
         overflow-y: hidden;
         scroll-behavior: smooth;
-        justify-content: space-around;
         scrollbar-color: var(--electric-blue);
         transition: 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
     }
@@ -116,7 +124,6 @@
         overflow: scroll;
         overflow-y: hidden;
         scroll-behavior: smooth;
-        justify-content: space-around;
         scrollbar-color: var(--electric-blue);
         transition: var(--carrousel-animation-timing);
     }
@@ -140,12 +147,13 @@
         justify-items: center;
         text-align: center;
         row-gap: 20px;
-        padding-bottom: 75vh;
+        padding-bottom: 35vh;
+        width: 100vw;
         padding-top: var(--top-bar-size-adjust);
     }
 
     .projects_section--title {
-        margin-bottom: 25%
+        margin-bottom: 5%
     }
 
     .carrousel_container{
@@ -155,10 +163,10 @@
         margin-bottom: 5%;
         column-gap: 10px;
         width: 100%;
-        overflow: scroll;
-        overflow-y: hidden;
+        overflow: hidden;
+        overflow-x: visible;
         scroll-behavior: smooth;
-        justify-content: space-between;
+        justify-content: start;
         scrollbar-color: var(--electric-blue);
         transition: 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
     }
@@ -170,10 +178,9 @@
         margin-bottom: 5%;
         column-gap: 10px;
         width: 100%;
-        overflow: scroll;
+        overflow-x: scroll;
         overflow-y: hidden;
         scroll-behavior: smooth;
-        justify-content: space-around;
         scrollbar-color: var(--electric-blue);
         transition: var(--carrousel-animation-timing);
     }

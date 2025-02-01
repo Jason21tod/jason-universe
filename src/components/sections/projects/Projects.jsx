@@ -1,4 +1,4 @@
-import React, { useState, cloneElement, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import ScrollAnimation from '../../utils/text_animations';
 
 import './Projects.css'
@@ -8,19 +8,6 @@ import axios from 'axios';
 
 let server_address = process.env.REACT_APP_SERVER;
 
-
-let project_data_test = {
-    name: 'Project name',
-    description: 'Description of a increadeable project made by myself and did ',
-    image_link: '/',
-    link: '/'
-}
-
-function project_factory() {
-    
-}
-
-let projects = []
 
 
 function Projects () {
@@ -37,27 +24,18 @@ function Projects () {
 
     return (
         <ScrollAnimation className={'projects-container'}>
+            <h2 className='projects_section--title'>Meus projetos</h2>
             <section id='projects-section' className="projects_section">
-                <h2 className='projects_section--title'>Meus projetos</h2>
                 <CarrouselContainer>
-                    <CarrousselItem/>
-                    <CarrousselItem/>
-                </CarrouselContainer>
-                <CarrouselContainer>
-                    <CarrousselItem/>
-                </CarrouselContainer>
-                <CarrouselContainer>
-                    <CarrousselItem/>
-                    <CarrousselItem/>
-                    <CarrousselItem/>
                 </CarrouselContainer>
             </section>
         </ScrollAnimation>
     )
 }
 
-function CarrouselContainer ({children}) {
+function CarrouselContainer () {
     const [carrouselState, setCarrousel] = useState('carrousel_container');
+    const [carrouselItemState, setCarrouselItem] = useState('carrousel_item carrousel_item--inactive');
     
     function expandContainer() {
         setCarrousel((prevState) =>
@@ -65,24 +43,54 @@ function CarrouselContainer ({children}) {
                 ? 'carrousel_container--expanded'
                 : 'carrousel_container'
         );
+        setCarrouselItem(carrouselState === 'carrousel_container--expanded'
+                ? 'carrousel_item carrousel_item--inactive'
+                : 'carrousel_item carrousel_item--active'
+        );
     }
-    const modifiedChildren = React.Children.map(children, (child) => {
-        if (React.isValidElement(child)) {
-            console.log("modify container infos")
-            const newClassName = `${child.props.className || 'carrousel_item'}
-            ${ carrouselState === 'carrousel_container--expanded'
-                ? 'carrousel_item carrousel_item--active'
-                : 'carrousel_item carrousel_item--inactive'
-            }
-            `.trim();
-            return  cloneElement(child, {className: newClassName, projectData: project_data_test});
-        }
-        return child;
-    });
+
+    function projectFactory(name, description, image_link, link) {
+        return(
+            <CarrousselItem className={carrouselItemState} projectData={
+                {
+                    name: name,
+                    description: description,
+                    image_link: image_link,
+                    link: link
+                }}/>)
+    }
+    
+
+    let projects = [
+        projectFactory(
+            'test 1', 'description test', '/', '/'
+        ),
+        projectFactory(
+            'test 2', 'description test 2', '/', '/'
+        ),
+        projectFactory(
+            'test 2', 'description test 2', '/', '/'
+        )
+    ]
+    
+    // const modifiedChildren = React.Children.map(children, (child) => {
+    //     console.log(child)
+    //     console.log(children)
+    //     if (React.isValidElement(child)) {
+    //         const newClassName = `${child.props.className || 'carrousel_item'}
+    //         ${ carrouselState === 'carrousel_container--expanded'
+    //             ? 'carrousel_item carrousel_item--active'
+    //             : 'carrousel_item carrousel_item--inactive'
+    //         }
+    //         `.trim();
+    //     }
+    // });
 
     return (
         <div className={carrouselState}  onClick={expandContainer}>
-            {modifiedChildren}
+            {projects.map(children => {
+                return children
+            })}
         </div>
     )
 }
