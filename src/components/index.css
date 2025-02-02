@@ -71,6 +71,10 @@ body {
     padding: 0% 5%;
 }
 
+#root {
+    width: 100vw;
+}
+
 .header-container p {
     font-size: 85%;
 }

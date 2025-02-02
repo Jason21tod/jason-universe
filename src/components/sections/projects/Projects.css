@@ -162,11 +162,11 @@
         height: 26%;
         margin-bottom: 5%;
         column-gap: 10px;
-        width: 100%;
+        width: 100vw;
         overflow: hidden;
-        overflow-x: visible;
+        overflow-x: scroll;
         scroll-behavior: smooth;
-        justify-content: start;
+        justify-content: space-around;
         scrollbar-color: var(--electric-blue);
         transition: 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
     }

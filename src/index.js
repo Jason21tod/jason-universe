@@ -7,8 +7,6 @@ import LetsWorkTogether from './components/sections/work_together/LetsWorkTogeth
 import Footer from './components/sections/footer/Footer.jsx';
 import Navigation from './components/sections/navigation/Navigation.jsx';
 
-import SidePopup from './components/Notifications.jsx';
-
 import WhereFindMe from './components/sections/where_find_me/WhereFindMe.jsx';
 import reportWebVitals from './reportWebVitals.js';
 
