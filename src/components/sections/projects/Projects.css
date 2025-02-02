@@ -103,8 +103,8 @@
         margin-bottom: 5%;
         column-gap: 10px;
         width: 100%;
-        overflow: scroll;
-        overflow-y: hidden;
+        overflow: hidden;
+        overflow-x: scroll;
         scroll-behavior: smooth;
         scrollbar-color: var(--electric-blue);
         transition: 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
