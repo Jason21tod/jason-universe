@@ -36,7 +36,19 @@ function Projects () {
 function CarrouselContainer () {
     const [carrouselState, setCarrousel] = useState('carrousel_container');
     const [carrouselItemState, setCarrouselItem] = useState('carrousel_item carrousel_item--inactive');
+    const [projects, setProjects] = useState([])
     
+    useEffect(() => {
+        axios
+            .get(`${server_address}/projects`)
+            .then((response) => {
+                setProjects(response.data.projects); 
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
+
     function expandContainer() {
         setCarrousel((prevState) =>
             prevState === 'carrousel_container'
@@ -49,50 +61,17 @@ function CarrouselContainer () {
         );
     }
 
-    function projectFactory(name, description, image_link, link) {
-        return(
-            <CarrousselItem className={carrouselItemState} projectData={
-                {
-                    name: name,
-                    description: description,
-                    image_link: image_link,
-                    link: link
-                }}/>)
-    }
-    
-
-    let projects = [
-        projectFactory(
-            'test 1', 'description test', '/', '/'
-        ),
-        projectFactory(
-            'test 2', 'description test 2', '/', '/'
-        ),
-        projectFactory(
-            'test 2', 'description test 2', '/', '/'
-        )
-    ]
-    
-    // const modifiedChildren = React.Children.map(children, (child) => {
-    //     console.log(child)
-    //     console.log(children)
-    //     if (React.isValidElement(child)) {
-    //         const newClassName = `${child.props.className || 'carrousel_item'}
-    //         ${ carrouselState === 'carrousel_container--expanded'
-    //             ? 'carrousel_item carrousel_item--active'
-    //             : 'carrousel_item carrousel_item--inactive'
-    //         }
-    //         `.trim();
-    //     }
-    // });
-
     return (
-        <div className={carrouselState}  onClick={expandContainer}>
-            {projects.map(children => {
-                return children
-            })}
+        <div className={carrouselState} onClick={expandContainer}>
+            {projects.map((project, index) => (
+                <CarrousselItem
+                    className={carrouselItemState}
+                    key={project.id || index}
+                    projectData={project}
+                />
+            ))}
         </div>
-    )
+    );
 }
 
 
@@ -101,7 +80,7 @@ function CarrousselItem ( {className, projectData} ) {
     console.log(`New project: ${projectData.name}`)
     return (
         <span className={className}>
-            <h3>{projectData.name}</h3>
+            <h3>{projectData.title}</h3>
             <p>{projectData.description}</p>
             <img src={projectData.image_link} alt="" />
             <a href={projectData.link}>Take a Look</a>
