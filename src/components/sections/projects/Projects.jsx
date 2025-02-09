@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ScrollAnimation from '../../utils/text_animations';
 
-import './Projects.css'
+// import './Projects.css'
 import { checkServerStatus } from '../../../middleware/api_services';
 import axios from 'axios';
 
@@ -37,15 +37,18 @@ function CarrouselContainer () {
     const [carrouselState, setCarrousel] = useState('carrousel_container');
     const [carrouselItemState, setCarrouselItem] = useState('carrousel_item carrousel_item--inactive');
     const [projects, setProjects] = useState([])
+    const [serverStatus, setServerStatus] = useState('offline')
     
     useEffect(() => {
         axios
             .get(`${server_address}/projects`)
             .then((response) => {
-                setProjects(response.data.projects); 
+                setProjects(response.data.projects);
+                setServerStatus('online')
             })
             .catch((error) => {
                 console.log(error);
+                setServerStatus('offline')
             });
     }, []);
 
@@ -61,6 +64,13 @@ function CarrouselContainer () {
         );
     }
 
+    if (serverStatus==='offline') {
+        return (
+            <div className='generic-container'>
+                <h3>O servidor está offline </h3>
+            </div>
+        )
+    }
     return (
         <div className={carrouselState} onClick={expandContainer}>
             {projects.map((project, index) => (

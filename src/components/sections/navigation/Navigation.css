@@ -25,7 +25,7 @@
     position: fixed;
     top: 0px;
     height: var(--top-bar-size-adjust);
-    width: 100%;
+    width: 100vw;
     z-index: -1;
 }
 
@@ -36,7 +36,7 @@
     }
     .navigation_container {
         position: fixed;
-        width: 100%;
+        width: 100vw;
     }
 
     .navigation_container--links {

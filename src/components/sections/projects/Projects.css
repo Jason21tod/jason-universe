@@ -13,7 +13,7 @@
     background-color: var(--electric-blue);
     padding: 23px 25px 15% 25px;
     text-align: center;
-    width: 300px;
+    width:300px;
     row-gap: 10px;
     transition: var(--carrousel-animation-timing);
     border-radius: 10px;
@@ -83,13 +83,12 @@
 
 @media screen and (min-width:1024px) {
     .projects-container {
-        width: 100%;
+        width: 100vw;
         margin-bottom: 70vh;
-        align-self: center;
     }
 
     .projects_section {
-        height: 120vh;
+        height: 100vh;
     }
 
     .projects_section h2 {
@@ -130,7 +129,7 @@
         height: 26%;
         margin-bottom: 5%;
         column-gap: 10px;
-        width: 100%;
+        width: 100vw;
         overflow: hidden;
         overflow-x: scroll;
         scroll-behavior: smooth;
@@ -148,7 +147,7 @@
         height: 50%;
         margin-bottom: 5%;
         column-gap: 10px;
-        width: 100%;
+        width: 100vw;
         overflow: scroll;
         overflow-y: hidden;
         scroll-behavior: smooth;
@@ -251,7 +250,7 @@
         overflow: hidden;
         transition: var(--carrousel-animation-timing);
         width: 100%;
-        height: 100%;
+        height: 100vw;
         position: relative;
     }
 
