@@ -38,3 +38,15 @@
 .carrousel_item a:active {
     background-color: var(--pen-blue);
 }
+
+@media screen and (max-width:414px) {
+    .carrousel_container--covered {
+        width: 100vw;
+        overflow: scroll;
+    }
+
+    .carrousel_item {
+        width: 50%;
+        padding: 12%;
+    }
+}
