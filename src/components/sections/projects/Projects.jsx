@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ScrollAnimation from '../../utils/text_animations';
 
-// import './Projects.css'
+import './Projects.css'
 import { checkServerStatus } from '../../../middleware/api_services';
 import axios from 'axios';
 
@@ -34,7 +34,7 @@ function Projects () {
 }
 
 function CarrouselContainer () {
-    const [carrouselState, setCarrousel] = useState('carrousel_container');
+    const [carrouselState, setCarrousel] = useState('carrousel_container--covered');
     const [carrouselItemState, setCarrouselItem] = useState('carrousel_item carrousel_item--inactive');
     const [projects, setProjects] = useState([])
     const [serverStatus, setServerStatus] = useState('offline')
@@ -54,9 +54,9 @@ function CarrouselContainer () {
 
     function expandContainer() {
         setCarrousel((prevState) =>
-            prevState === 'carrousel_container'
+            prevState === 'carrousel_container--covered'
                 ? 'carrousel_container--expanded'
-                : 'carrousel_container'
+                : 'carrousel_container--covered'
         );
         setCarrouselItem(carrouselState === 'carrousel_container--expanded'
                 ? 'carrousel_item carrousel_item--inactive'
