@@ -1,3 +1,5 @@
+
+
 header {
     height: 100vh;
     display: flex;
@@ -14,6 +16,8 @@ body {
     font-size: 150%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 h1 {
@@ -37,7 +41,7 @@ legend {
 
 main {
     padding: 0% 5%;
-    /* /* width: 100vw; */
+    /* width: 100vw; */
     justify-content: center;
 } 
 
