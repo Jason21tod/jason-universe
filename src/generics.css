@@ -1,0 +1,44 @@
+
+/* All styles in this page are from generic types, that means its used in all parts of website */
+
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Micro+5&family=Parkinsans:wght@300..800&family=Pixelify+Sans:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+:root {
+    --oxford-blue: #0c0c2eff;
+    --lapis-lazuli: #0057a9ff;
+    --aqua: #30ffffff;
+    --medium-slate-blue: #9c6effff;
+    --russian-violet: #230949ff;
+    --deep-space-blue: #02040e;
+    --star-white: #ecf4ff;
+    --star-white-sub: #cfe3ff;
+}
+
+body {
+    background-color: var(--deep-space-blue);
+    background-image: url(../public/images/blue-astra.png);
+    background-repeat: no-repeat;    
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: var(--aqua);
+}
+
+h1 {
+    color: var(--star-white);
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+@keyframes fadeInY {
+    from {
+        opacity: 0;
+        transform: translateY(20% );
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

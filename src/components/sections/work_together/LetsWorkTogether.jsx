@@ -1,6 +1,6 @@
 import './LetsWorkTogether.css'
 
-import SidePopup from '../../Notifications';
+import SidePopup from '../../utils/Notifications';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { checkServerStatus } from '../../../middleware/api_services';

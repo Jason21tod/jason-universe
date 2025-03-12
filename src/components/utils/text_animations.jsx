@@ -32,7 +32,7 @@ function ScrollAnimation({ children, className='' }) {
   }
 
 
-  function WordPopup ({word, anim_time, delay_coefficient}) {
+  function WordPopup ({word, anim_time, delay_coefficient, font_size='36px'}) {
     let anim_config = `${"fadeInY "+anim_time}`;
    return (
      <p>
@@ -40,10 +40,10 @@ function ScrollAnimation({ children, className='' }) {
          <span
            key={index}
            style={{
-             animation: anim_config, //Hoje aprendi a criar uma animação :D
+             animation: anim_config, 
              animationDelay: `${index * delay_coefficient}s`,
              display: "inline-block",
-             fontSize: "45px"
+             fontSize: font_size
            }}
          >
            {char === " " ? "\u00A0" : char}
