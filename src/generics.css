@@ -8,7 +8,7 @@
     --oxford-blue: #0c0c2eff;
     --lapis-lazuli: #0057a9ff;
     --aqua: #30ffffff;
-    --medium-slate-blue: #9c6effff;
+    --medium-slate-blue: #9c6eff;
     --russian-violet: #230949ff;
     --deep-space-blue: #02040e;
     --star-white: #ecf4ff;
@@ -17,8 +17,6 @@
 
 body {
     background-color: var(--deep-space-blue);
-    background-image: url(../public/images/blue-astra.png);
-    background-repeat: no-repeat;    
     font-family: "Pixelify Sans", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;

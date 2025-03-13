@@ -9,6 +9,21 @@
     line-height: 34px;
     row-gap: 24px;
     animation-timing-function: ease-in-out;
+    background-image: url(./blue-astra.png);
+    background-repeat: no-repeat;   
+    background-size: cover; 
+    background-position: left;
+}
+
+.header-container::after {
+    content: "";
+    position: absolute;
+    background-image: url(./asteroids-first-pla-1080x720.png);
+    background-position: center;
+    background-size: contain;
+    width: 97vw;
+    display: flex;
+    height: 100vh;
 }
 
 .header-container_legend {
