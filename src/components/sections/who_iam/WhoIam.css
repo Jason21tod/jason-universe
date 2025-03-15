@@ -1,0 +1,37 @@
+:root {
+    --who-iam-padding: 1.5%;
+}
+
+.who-iam-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url(./star-background-1080x720.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-top: 20%;
+}
+
+.who-iam--column {
+    display: flex;
+    flex-direction: column;
+}
+
+.who-iam--title {
+    color: var(--star-white);
+    font-size: 34px;
+    padding: var(--who-iam-padding);
+    margin-bottom: 18px;
+    text-decoration: underline;
+    letter-spacing: 0.05em;
+}
+
+.who-iam--paragraph {
+    width: 30vw;
+    padding: var(--who-iam-padding);
+    line-height: 18px;
+    word-spacing: 3px;
+    letter-spacing: 0.01em;
+}
