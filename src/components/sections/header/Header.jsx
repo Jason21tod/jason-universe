@@ -18,6 +18,7 @@ function Header() {
         <WordPopup word={tittle_text_3} anim_time={animation_time} delay_coefficient={0.1} font_size="56px"></WordPopup>
         <WordPopup word={tittle_text_4} anim_time={animation_time} delay_coefficient={0.1} font_size="56px"></WordPopup>
       </h1>
+      <hr />
       <legend className="header-container_legend">Gian P. Nunes Desenvolvedor FullStack</legend>
     </header>
   );
