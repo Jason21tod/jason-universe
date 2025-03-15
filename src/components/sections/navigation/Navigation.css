@@ -1,3 +1,56 @@
 .navigation_container {
     position: fixed;
+    display: flex;
+    height: 12vh;
+    column-gap: 25%;
+    width: 100vw;
+    z-index: 3;
+    background-color: var(--deep-space-blue);
+}
+
+.navigation_container--button {
+    display: none;
+}
+
+.navigation_bar {
+    justify-content: center;
+    flex:50%;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+}
+
+.navigation_bar-text {
+    text-align: center;
+}
+
+.navigation_container--links {
+    display: flex;
+    flex: 50%;
+    padding-top: 14px;
+    align-items: center;
+    column-gap: 54px;
+    justify-content: end;
+    padding-right: 7%;
+}
+
+.navigation_container--links a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 2%;
+    border-radius: 10px;
+}
+
+.navigation_container--links a:visited {
+    color: var(--medium-slate-blue);
+}
+
+.navigation_container--links a:hover {
+    background-color: var(--russian-violet);
+    color: var(--star-white);
+}
+
+#work_with_me--link {
+    background-color: var(--russian-violet);
 }
