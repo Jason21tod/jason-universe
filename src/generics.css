@@ -35,8 +35,26 @@ h1 {
         transform: translateY(20% );
     }
 
+    95% {
+        transform: translateY(-5%);
+    }
+
+    97% {
+        transform: translateY(-2%);
+    }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.scroll-animation--visible {
+    opacity: 1;
+    animation: fadeInY 0.5s ease-in-out;
+}
+
+
+.scroll-animation--hidden {
+    opacity: 0;
 }

@@ -40,26 +40,12 @@
     animation: descShowUp 6s;
 }
 
-@keyframes firstImageAppear {
-    from {
-        opacity: 0%;
-    }
-
-    to {
-        opacity: 100%;
-    }
-}
-
 .header-container_legend {
     color: var(--star-white-sub);
     font-size: 24px;
     width: 50%;
-    animation: descShowUp 3s;
-    color: var(--aqua);
-}
-
-.header-container p {
     animation: descShowUp 2s;
+    color: var(--aqua);
 }
 
 @keyframes descShowUp {
