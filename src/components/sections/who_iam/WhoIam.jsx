@@ -1,5 +1,5 @@
 import './WhoIam.css'
-import ScrollAnimation from '../../utils/text_animations.jsx'
+import {ScrollAnimation} from '../../utils/text_animations.jsx'
 
 
 function WhoIam() {
@@ -9,7 +9,7 @@ function WhoIam() {
         <ScrollAnimation >
           <h2 className='who-iam--title'>Sobre Mim</h2>
           <p className='who-iam--paragraph'>
-            Olá, me chamo Gian Pereira e tenho 22 anos. Atualmente, trabalho como freelancer para renda extra.
+            Olá, me chamo Gian Pereira (Ou Jason) e tenho 22 anos. Atualmente, trabalho como freelancer para renda extra.
             Meu principal foco é desenvolvimento de soluções de automação, desenvolvimento de sites e melhorias
             de processos empresariais e relacionados ao cliente.
           </p>
@@ -23,7 +23,7 @@ function WhoIam() {
       </div>
       <div className='who-iam--column'>
         <ScrollAnimation>
-          <img id='planet' src="./images/astra-planet-64x64.png" alt="collection of projects" />
+          <img id='planet' src="./images/me-image-animation.gif" alt="collection of projects" />
         </ScrollAnimation>
       </div>
     </section>

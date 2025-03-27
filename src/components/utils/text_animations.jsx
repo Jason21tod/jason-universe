@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 
-function ScrollAnimation({ children, className='' }) {
+function ScrollAnimation({ children, className='', id='' }) {
     const [isVisible, setIsVisible] = useState(false);
     const elementReference = useRef(null);
   
@@ -21,8 +21,10 @@ function ScrollAnimation({ children, className='' }) {
   
       return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
     return (
       <div
+        id={id}
         ref={elementReference}
         className={isVisible ? `${className} scroll-animation scroll-animation--visible`:`${className} scroll-animation scroll-animation--hidden`}
         >
@@ -32,7 +34,9 @@ function ScrollAnimation({ children, className='' }) {
   }
 
 
-  function WordPopup ({word, anim_time, delay_coefficient, font_size='36px'}) {
+
+
+function WordPopup ({word, anim_time, delay_coefficient, font_size='36px'}) {
     let anim_config = `${"fadeInY "+anim_time}`;
    return (
      <p>
@@ -55,4 +59,4 @@ function ScrollAnimation({ children, className='' }) {
 }
 
 export {WordPopup};
-export default ScrollAnimation;
+export {ScrollAnimation};

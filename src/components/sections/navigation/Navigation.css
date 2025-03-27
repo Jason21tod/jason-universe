@@ -6,6 +6,39 @@
     width: 100vw;
     z-index: 3;
     background-color: var(--deep-space-blue);
+    animation: navBarPopup 1.2s ease-in-out;
+}
+
+.navigation_container--deactivated {
+    position: fixed;
+    display: flex;
+    height: 12vh;
+    column-gap: 25%;
+    width: 100vw;
+    z-index: 3;
+    background-color: var(--deep-space-blue);
+    animation: navBarPopup 1.2s ease-in-out;
+}
+
+@keyframes navBarPopup {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes navBarfadeOut {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .navigation_container--button {

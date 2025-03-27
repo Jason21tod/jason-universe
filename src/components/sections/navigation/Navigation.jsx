@@ -29,6 +29,13 @@ function Navigation () {
     )
 }
 
+function NavBarOclusion () {
+    return (
+        <div className='navigation_container--deactivate'>
+        </div>
+    )
+}
+
 function ToggleMenu ({handleClick}) {
     return (
         <button onClick={handleClick} className="navigation_container--button navigation_container--button--inactive">
@@ -38,4 +45,5 @@ function ToggleMenu ({handleClick}) {
         </button>)
 }
 
-export default Navigation;
+export {NavBarOclusion};
+export {Navigation};

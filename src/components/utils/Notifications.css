@@ -1,0 +1,14 @@
+.side_popup {
+    background-color: rgb(0, 128, 49);
+    text-align: center;
+    padding: 3%;
+}
+
+.searching {
+    background-color: rgb(211, 211, 29);
+}
+
+.failed {
+    background-color: rgb(216, 28, 53);
+}
+
