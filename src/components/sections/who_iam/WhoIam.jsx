@@ -23,7 +23,13 @@ function WhoIam() {
       </div>
       <div className='who-iam--column'>
         <ScrollAnimation>
-          <img id='planet' src="./images/me-image-animation.gif" alt="collection of projects" />
+          <img id='planet' srcSet="
+          ./images/me-image-animation-cel.gif 192w,
+          ./images/me-image-animation.gif "
+          sizes='(max-width: 480px) 192px,
+          448px'
+
+          alt="Me in pixel art!" />
         </ScrollAnimation>
       </div>
     </section>

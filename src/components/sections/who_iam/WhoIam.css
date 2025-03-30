@@ -34,3 +34,24 @@
     word-spacing: 3px;
     letter-spacing: 0.01em;
 }
+
+@media screen and (max-width:480px) {
+    .who-iam-container {
+        flex-direction: column;
+        background-image: none;
+        justify-content: center;
+        align-items: center;
+        padding: 3%;
+        width: 97vw;
+        row-gap: 20px;
+    }
+
+    .who-iam--column {
+        width: 100%;
+        align-items: center;
+    }
+
+    .who-iam--paragraph {
+        width: 100%;
+    }
+}
