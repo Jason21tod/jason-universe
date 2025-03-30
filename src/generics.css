@@ -30,23 +30,16 @@ body {
     color: var(--aqua);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     row-gap: 50px;
-    width: 100vw;
+    overflow-x: hidden;
 }
 
-body .main_section {
-    width: 100%;
-}
 
 main {
     display: flex;
     flex-direction: column;
     row-gap: 250px;
-    justify-items: center;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+    overflow-x: hidden;
 }
 
 h1 {

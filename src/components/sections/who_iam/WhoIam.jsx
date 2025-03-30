@@ -27,7 +27,7 @@ function WhoIam() {
           ./images/me-image-animation-cel.gif 192w,
           ./images/me-image-animation.gif "
           sizes='(max-width: 480px) 192px,
-          448px'
+          440px'
 
           alt="Me in pixel art!" />
         </ScrollAnimation>
