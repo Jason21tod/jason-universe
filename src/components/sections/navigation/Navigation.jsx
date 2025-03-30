@@ -13,14 +13,13 @@ function Navigation () {
 
     return (
         <div className="navigation_container">
+            <ToggleMenu handleClick={handleClick}></ToggleMenu>
             <div className='navigation_bar'>
-                <ToggleMenu handleClick={handleClick}></ToggleMenu>
                 <p className='navigation_bar-text'>
                     Welcome to my profile
                 </p>
             </div>
             <nav className={`navigation_container--links ${menuState}`}>
-                <ToggleMenu handleClick={handleClick}></ToggleMenu>
                 <a onClick={handleClick} href="#about-section">About Me</a>
                 <a onClick={handleClick} href="#projects-section">Projects</a>
                 <a id='work_with_me--link' onClick={handleClick} href="#work-with-me">Work With Me</a>

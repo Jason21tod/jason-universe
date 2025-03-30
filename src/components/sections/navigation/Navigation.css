@@ -87,3 +87,50 @@
 #work_with_me--link {
     background-color: var(--russian-violet);
 }
+
+@media screen and (max-width:480px) {
+    .navigation_container {
+        position: fixed;
+        column-gap: 15%;
+        z-index: 3;
+        top: 0px;
+    }
+
+    .navigation_container--button {
+        display: flex;
+        position: fixed;
+        z-index: 3;
+        background-color: var(--lapis-lazuli);
+        color: var(--aqua);
+        left: 15px;
+        top: 15px;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 5px;
+        padding-top: 0.7%;
+    }
+
+    .navigation_container--links {
+        position: absolute;
+        background-color: var(--oxford-blue);
+        flex-direction: column;
+        height: 100vh;
+        justify-content: center;
+        width: 250px;
+        padding: 0% 5%;
+        top: 0;
+        left: -100%;
+        padding-top: 0%;
+    }
+
+    .navigation_container--links--inactive {
+        transition: 1s all;
+    }
+
+    .navigation_container--links--active {
+        left: 0%;
+        transition: 1s all;
+    }
+    
+}

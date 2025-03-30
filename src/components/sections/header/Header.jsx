@@ -1,5 +1,5 @@
 import { WordPopup } from "../../utils/text_animations";
-import './Header_container.css';
+import './Header.css';
 
 
 function Header() {
@@ -13,10 +13,10 @@ function Header() {
     <header className="header-container">
       <h1 className="header-container_title">
         {/* O codigo abaixo cria uma animação de pop up em letra por letra */}
-        <WordPopup word={title_text} anim_time={animation_time} delay_coefficient={0.1} font_size="56px"></WordPopup>
-        <WordPopup word={tittle_text_2} anim_time={animation_time} delay_coefficient={0.1} font_size="56px"></WordPopup>
-        <WordPopup word={tittle_text_3} anim_time={animation_time} delay_coefficient={0.1} font_size="56px"></WordPopup>
-        <WordPopup word={tittle_text_4} anim_time={animation_time} delay_coefficient={0.1} font_size="56px"></WordPopup>
+        <WordPopup word={title_text} anim_time={animation_time} delay_coefficient={0.1} ></WordPopup>
+        <WordPopup word={tittle_text_2} anim_time={animation_time} delay_coefficient={0.1} ></WordPopup>
+        <WordPopup word={tittle_text_3} anim_time={animation_time} delay_coefficient={0.1} ></WordPopup>
+        <WordPopup word={tittle_text_4} anim_time={animation_time} delay_coefficient={0.1} ></WordPopup>
       </h1>
       <hr />
       <legend className="header-container_legend">Gian P. Nunes Desenvolvedor FullStack</legend>

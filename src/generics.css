@@ -13,6 +13,13 @@
     --deep-space-blue: #02040e;
     --star-white: #ecf4ff;
     --star-white-sub: #cfe3ff;
+    --word-popup-font-size: 56px;
+}
+
+@media only screen and (max-width:480px) {
+    :root {
+        --word-popup-font-size: 46px
+    }
 }
 
 body {

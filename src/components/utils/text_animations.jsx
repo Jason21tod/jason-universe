@@ -36,7 +36,7 @@ function ScrollAnimation({ children, className='', id='' }) {
 
 
 
-function WordPopup ({word, anim_time, delay_coefficient, font_size='36px'}) {
+function WordPopup ({word, anim_time, delay_coefficient}) {
     let anim_config = `${"fadeInY "+anim_time}`;
    return (
      <p>
@@ -47,7 +47,7 @@ function WordPopup ({word, anim_time, delay_coefficient, font_size='36px'}) {
              animation: anim_config, 
              animationDelay: `${index * delay_coefficient}s`,
              display: "inline-block",
-             fontSize: font_size
+             fontSize: 'var(--word-popup-font-size)'
            }}
          >
            {char === " " ? "\u00A0" : char}
