@@ -104,7 +104,7 @@ function CarrousselItem ( {className, projectData} ) {
     console.log(`New project: ${projectData.name}`)
     return (
         <span className={className}>
-            <div className='carousel_contaier--item_image_container'>
+            <div className='carousel_container--item_image_container'>
                 <img src={projectData.image_link} alt="" />
             </div>
             <div className='carousel_container--item_body'>

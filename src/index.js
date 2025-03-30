@@ -31,7 +31,7 @@ function MainSection () {
     };
   }, [])
   return (
-    <div>
+    <div className='main_section'>
       {isOcluded ? <NavBarOclusion /> : <Navigation />}
       <Header />
       <main>

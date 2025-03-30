@@ -30,13 +30,23 @@ body {
     color: var(--aqua);
     display: flex;
     flex-direction: column;
+    justify-content: center;
     row-gap: 50px;
+    width: 100vw;
+}
+
+body .main_section {
+    width: 100%;
 }
 
 main {
     display: flex;
     flex-direction: column;
     row-gap: 250px;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 h1 {

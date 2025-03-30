@@ -10,6 +10,7 @@
 .projects_section--title {
     font-size: 34px;
     align-self: center;
+    margin-bottom: 5%;
 }
 
 .carousel_container {
@@ -60,7 +61,7 @@
     color: black;
 }
 
-.carousel_contaier--item_image_container {
+.carousel_container--item_image_container {
     background-color: var(--russian-violet);
     width: 100%;
     border-radius: 10px 10px 0 0 ;
@@ -82,4 +83,17 @@
 
 .carousel_container--item a:hover {
     background-color: aqua;
+}
+
+@media screen and (max-width:480px) {
+    .carousel_container--item {
+        width: 50%;
+        min-width: 40%;
+        max-width: 50%;
+        height: fit-content;
+    }
+
+    .carousel_container--item_image_container img {
+        scale: 0.7;
+    }
 }

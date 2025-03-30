@@ -120,3 +120,34 @@ input:-internal-autofill-selected {
     background-color: transparent;
 }
 
+@media screen and (max-width:480px) {
+    .lets_work-section {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100vw;
+        align-self: center;
+    }
+
+    .lets_work-form_container {
+        width: 100%;
+    }
+
+    .lets_work-form input {
+        width: 70%;
+        align-self: center;
+    }
+
+    .lets_work-form {
+        padding: 0% 5%;
+    }
+
+    .col_form {
+        padding: 0%;
+        margin: 0% 0% 0% 0%;
+    }
+
+    .lets_work-submit {
+        margin: 5% 0%;
+    }
+}
+
