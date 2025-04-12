@@ -1,48 +1,60 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
-import './Navigation.css'
+import './Navigation.css';
+import translations from '../../../translations';
+import { LanguageContext } from '../../../languageContext';
 
-
-function Navigation () {
-    const [menuState, setMenu] = useState("navigation_container--links--inactive")
+function Navigation() {
+    const [menuState, setMenu] = useState("navigation_container--links--inactive");
+    
+    const language= useContext(LanguageContext);
 
     const handleClick = () => {
-        (menuState === "navigation_container--links--inactive") ? 
-        setMenu('navigation_container--links--active') : setMenu("navigation_container--links--inactive")
+        (menuState === "navigation_container--links--inactive") 
+            ? setMenu('navigation_container--links--active') 
+            : setMenu("navigation_container--links--inactive");
     }
 
     return (
         <div className="navigation_container">
-            <ToggleMenu handleClick={handleClick}></ToggleMenu>
+            <ToggleMenu handleClick={handleClick} />
+            
             <div className='navigation_bar'>
                 <p className='navigation_bar-text'>
-                    Welcome to my profile
+                    {translations[language.language]?.welcome}
                 </p>
             </div>
+            
             <nav className={`navigation_container--links ${menuState}`}>
-                <a id="about_me--link"onClick={handleClick} href="#about-section">About Me</a>
-                <a id="projects--link" onClick={handleClick} href="#projects-section">Projects</a>
-                <a id='work_with_me--link' onClick={handleClick} href="#work-with-me">Work With Me</a>
+                <a id="about_me--link" onClick={handleClick} href="#about-section">
+                    {translations[language.language]?.about_me}
+                </a>
+                <a id="projects--link" onClick={handleClick} href="#projects-section">
+                    {translations[language.language]?.projects}
+                </a>
+                <a id="work_with_me--link" onClick={handleClick} href="#work-with-me">
+                    {translations[language.language]?.work_with_me}
+                </a>
             </nav>
         </div>
     )
 }
 
-function NavBarOclusion () {
+function NavBarOclusion() {
     return (
-        <div className='navigation_container--deactivate'>
-        </div>
+        <div className='navigation_container--deactivate'></div>
     )
 }
 
-function ToggleMenu ({handleClick}) {
+function ToggleMenu({ handleClick }) {
     return (
         <button onClick={handleClick} className="navigation_container--button navigation_container--button--inactive">
             <i className="navigation_container--menu">
-                <span class="material-symbols-outlined">menu</span>
+                <span className="material-symbols-outlined">menu</span>
             </i>
-        </button>)
+        </button>
+    )
 }
 
-export {NavBarOclusion};
-export {Navigation};
+export { NavBarOclusion };
+export { Navigation };

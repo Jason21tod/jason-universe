@@ -1,0 +1,58 @@
+const translations = {
+    en: {
+      projects_title: "My Projects",
+      welcome:"Welcome To My Portfolio",
+      about: "I am Jason, fullstack developer.",
+      change_language: "Mudar para PT-BR",
+      title_text_1: " Let's",
+      title_text_2: " Build",
+      title_text_3: " Your",
+      title_text_4: " Universe?",
+      rights: "All rights reserved.",
+      where_find_me: "Where Find Me",
+      about_me: "About Me",
+      projects: "Projects",
+      work_with_me: "Let's Start?",
+      take_a_look: "Take a Look",
+      who_iam_paragraph_1: "Hi, I'm Gian Pereira (you can call me Jason). I currently work as a freelancer to supplement my income. My main focus is on automation solutions, data collection, web development, business process improvements and customer-related systems.",
+      who_iam_paragraph_2: "My biggest work was done for the Clara Resorts hotel chain during my time there, however, I have also developed smaller projects, both volunteer and paid projects.",
+      proposal_sended: "Proposal Sended! Keep eyes on your Mailbox.",
+      server_online: "Server Online",
+      server_offline: "Server Offline",
+      server_connecting: "Connecting...",
+      lets_work_legend: "Send a proposal or contact me below",
+      server_is_down: "Could Not connect to server...",
+      name: "Name",
+      proposal: "Proposal",
+      send_proposal: "Send Proposal"
+    },
+    pt: {
+      projects_title: "Meus Projetos",
+      welcome:"Bem Vindo Ao Meu Portfolio",
+      change_language: "Change to EN-US",
+      about: "Sou Jason, desenvolvedor fullstack.",
+      title_text_1: "Vamos",
+      title_text_2: " Construir",
+      title_text_3: " Seu",
+      title_text_4: " Universo?",   
+      rights: "Todos os direitos reservados.",
+      about_me: "Sobre Mim",
+      projects: "Projetos",
+      work_with_me: "Vamos Começar?",
+      take_a_look: "Dê uma olhada",
+      who_iam_paragraph_1: "Olá, me chamo Gian Pereira (Ou Jason) e tenho 22 anos. Atualmente, trabalho como freelancer para renda extra. Meu principal foco é desenvolvimento de soluções de automação, desenvolvimento de sites e melhorias de processos empresariais e relacionados ao cliente.",
+      who_iam_paragraph_2: "Meu maior trabalho foi feito para a rede de Hoteis do Clara Resorts durante meu tempo de trabalho lá, entretanto, tenho desenvolvido projetos menores, voluntários e pagos.",
+      proposal_sended: "Proposta Enviada! Fique de Olho no Seu Email.",
+      lets_work_legend: "Me mande uma proposta ou me contacte abaixo.",
+      server_online: "Servidor Online",
+      server_offline: "Servidor Offline",
+      server_connecting: "Conectando ao Servidor...",
+      server_is_down: "Não foi possivel se conectar ao servidor...",
+      name: "Nome",
+      proposal: "Proposta",
+      send_proposal: "Enviar Proposta"
+    }
+  };
+  
+  export default translations;
+  

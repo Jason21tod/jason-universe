@@ -5,6 +5,9 @@ import './Projects.css'
 import { checkServerStatus } from '../../../middleware/api_services';
 import axios from 'axios';
 
+import translations from '../../../translations';
+import { LanguageContext } from '../../../languageContext';
+import { useContext } from 'react';
 
 let server_address = process.env.REACT_APP_SERVER;
 let dev_environ = process.env.REACT_APP_ENV;
@@ -12,6 +15,7 @@ let dev_environ = process.env.REACT_APP_ENV;
 console.log(`enviroment`, dev_environ)
 
 function Projects () {
+    const language = useContext(LanguageContext);
 
     useEffect(() => {
         checkServerStatus(server_address+'/projects', axios.get, {}).then(response =>{
@@ -25,7 +29,7 @@ function Projects () {
 
     return (
         <ScrollAnimation id={'projects-section'}className={'projects-container'}>
-            <h2  className='projects_section--title'>Meus projetos</h2>
+            <h2  className='projects_section--title'>{translations[language.language]?.projects_title}</h2>
             <section className="projects_section">
                 <CarouselContainer>
                 </CarouselContainer>
@@ -81,7 +85,7 @@ function CarouselContainer () {
         console.log(dev_environ)
         return (
             <div className='generic-container'>
-                <h3>O servidor está offline </h3>
+                <h3>Server Is Offline</h3>
             </div>
         )
     }
@@ -100,6 +104,7 @@ function CarouselContainer () {
 
 
 function CarrousselItem ( {className, projectData} ) {
+    const language = useContext(LanguageContext);
 
     console.log(`New project: ${projectData.name}`)
     return (
@@ -110,7 +115,7 @@ function CarrousselItem ( {className, projectData} ) {
             <div className='carousel_container--item_body'>
                 <h3>{projectData.title}</h3>
                 <p>{projectData.description}</p>
-                <a href={projectData.link}>Take a Look</a>
+                <a href={projectData.link}>{translations[language.language]?.take_a_look}</a>
             </div>
         
         </span>

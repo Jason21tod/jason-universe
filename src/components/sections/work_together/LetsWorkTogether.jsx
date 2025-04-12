@@ -4,28 +4,30 @@ import SidePopup from '../../utils/Notifications';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { checkServerStatus } from '../../../middleware/api_services';
-// import {ScrollAnimation} from '../../utils/text_animations';
-// import { NavBarOclusion } from '../../utils/text_animations';
+import translations from '../../../translations';
+import { LanguageContext } from '../../../languageContext';
+import { useContext } from 'react';
+
 
 let server_address = process.env.REACT_APP_SERVER;
 
 
-
 function LetsWorkTogether () {
+    const language = useContext(LanguageContext)
     const [server_status, setServerStatus] = useState('offline')
     const [popup, setPopup] = useState('--searching')
     const [popup_type, setPopupType] = useState('searching')
-    const [popup_content, setPopupContent] = useState('searching server...')
+    const [popup_content, setPopupContent] = useState(translations[language.language]?.server_connecting)
 
     useEffect(() => {
         checkServerStatus(server_address+'/email_service', axios.post, dataFactory('name', 'test@gmail.com', 'my proposal test')).then(response=> {
             if (response===200) {
-                changePopupExibition('online', 'Server Online!')
+                changePopupExibition('online', translations[language.language]?.server_online)
             } else {
-                changePopupExibition('offline', 'Server is Offline...')
+                changePopupExibition('offline', translations[language.language]?.server_offline)
             }
         });
-    }, [])
+    }, [language.language])
 
 
     const submitProposal = () => {
@@ -78,14 +80,14 @@ function LetsWorkTogether () {
         }).then(response => {
             console.log(response)
             if (response.data['status']==='success') {
-                changePopupExibition('online', 'Proposal sended, keep eyes on your email')
+                changePopupExibition('online', translations[language.language]?.proposal_sended)
                 event.target.elements.name.value = '';
                 event.target.elements.email.value = '';
                 event.target.elements.proposal.value = '';
             }
         }).catch(error=> {
             console.log(error)
-            changePopupExibition('offline', 'Server is down or unreacheable')
+            changePopupExibition('offline', translations[language.language]?.server_is_down)
         })
     }
 
@@ -93,21 +95,21 @@ function LetsWorkTogether () {
             <section id='work-with-me' className="lets_work-section">
                 <div className='lets_work-col col_form'>
                     <div className='col_form-header'>
-                        <h2 className="lets_work-title">Work With Me</h2>
-                        <legend className="lets_work-legend">Everything like you want</legend>
+                        <h2 className="lets_work-title">{translations[language.language]?.work_with_me}</h2>
+                        <legend className="lets_work-legend">{translations[language.language]?.lets_work_legend}</legend>
                         <SidePopup popup_status={popup} type={popup_type} content={popup_content} anim_duration='3s'/>
                     </div>
                     <div className='col_form-form_area'>
                         <form method='post' onSubmit={handleSubmit} className='lets_work-form_container' >
                             <div className='lets_work-form'>
-                                <label required htmlFor="name">Name: </label>
+                                <label required htmlFor="name">{translations[language.language]?.name}: </label>
                                 <input required type="text" name="name" id="name" />
                                 <label required htmlFor="email">Email: </label>
                                 <input required type="email" name="email" id="email" />
-                                <label required htmlFor="proposal">Proposal: </label>
+                                <label required htmlFor="proposal">{translations[language.language]?.proposal}: </label>
                                 <input required type="text" name="proposal" id="proposal"/>
                             </div>
-                            <input className='lets_work-submit' type="submit" value="Enviar proposta" />
+                            <input className='lets_work-submit' type="submit" value={translations[language.language]?.send_proposal} />
                         </form>
                     </div>
                 </div>

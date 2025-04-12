@@ -32,6 +32,9 @@
     border: 3px solid var(--aqua);
     border-radius: 100px;
     padding: 3px;
+    text-align: center;
+    justify-content: end;
+    content-visibility: hidden;
 }
 
 #github {

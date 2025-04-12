@@ -1,25 +1,29 @@
 import { WordPopup } from "../../utils/text_animations";
+import {  LanguageContext } from "../../../languageContext";
+import translations from "../../../translations";
 import './Header.css';
-
+import { useContext } from "react";
 
 function Header() {
-  const title_text = "Vamos";
-  const tittle_text_2 = " Construir";
-  const tittle_text_3 = " Seu";
-  const tittle_text_4 = " Universo?";
+  const language = useContext(LanguageContext);  
+
+  const title_text = translations[language.language].title_text_1;
+  const title_text_2 = translations[language.language].title_text_2;
+  const title_text_3 = translations[language.language].title_text_3;
+  const title_text_4 = translations[language.language].title_text_4;
   const animation_time = '0.5s';
+
 
   return (
     <header className="header-container">
       <h1 className="header-container_title">
-        {/* O codigo abaixo cria uma animação de pop up em letra por letra */}
         <WordPopup word={title_text} anim_time={animation_time} delay_coefficient={0.1} ></WordPopup>
-        <WordPopup word={tittle_text_2} anim_time={animation_time} delay_coefficient={0.1} ></WordPopup>
-        <WordPopup word={tittle_text_3} anim_time={animation_time} delay_coefficient={0.1} ></WordPopup>
-        <WordPopup word={tittle_text_4} anim_time={animation_time} delay_coefficient={0.1} ></WordPopup>
+        <WordPopup word={title_text_2} anim_time={animation_time} delay_coefficient={0.1} ></WordPopup>
+        <WordPopup word={title_text_3} anim_time={animation_time} delay_coefficient={0.1} ></WordPopup>
+        <WordPopup word={title_text_4} anim_time={animation_time} delay_coefficient={0.1} ></WordPopup>
       </h1>
       <hr />
-      <legend className="header-container_legend">Gian P. Nunes Desenvolvedor FullStack</legend>
+      <legend className="header-container_legend">{translations[language.language]?.about}</legend>
     </header>
   );
 }

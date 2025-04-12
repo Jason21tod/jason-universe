@@ -5,11 +5,13 @@ import Projects from './components/sections/projects/Projects.jsx';
 import Header from './components/sections/header/Header.jsx';
 import LetsWorkTogether from './components/sections/work_together/LetsWorkTogether.jsx';
 import Footer from './components/sections/footer/Footer.jsx';
-import {Navigation, NavBarOclusion} from './components/sections/navigation/Navigation.jsx';
+import { Navigation, NavBarOclusion } from './components/sections/navigation/Navigation.jsx';
 
 import WhereFindMe from './components/sections/where_find_me/WhereFindMe.jsx';
 import reportWebVitals from './reportWebVitals.js';
 import { ScrollAnimation } from './components/utils/text_animations.jsx';
+
+import { LanguageProvider } from './languageContext';
 
 import './reset.css';
 import './components/index.css';
@@ -29,7 +31,8 @@ function MainSection () {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [])
+  }, []);
+
   return (
     <div className='main_section'>
       {isOcluded ? <NavBarOclusion /> : <Navigation />}
@@ -38,21 +41,24 @@ function MainSection () {
         <WhoIam />
         <Projects />
         <ScrollAnimation>
-            <LetsWorkTogether/>
+          <LetsWorkTogether />
         </ScrollAnimation>
       </main>
     </div>
-  )
+  );
 }
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <MainSection></MainSection>
-    <footer className='footer-container'>
-      <WhereFindMe />
-      <Footer/>
-    </footer>
+    <LanguageProvider>
+      <MainSection />
+      <footer className='footer-container'>
+        <WhereFindMe />
+        <Footer />
+      </footer>
+    </LanguageProvider>
   </React.StrictMode>
 );
 
