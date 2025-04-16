@@ -59,7 +59,8 @@ function CarouselContainer () {
     if (dev_environ ==='dev') {
         let project_data_mock = {
             title: 'title test',
-            description: 'this is a increadeble project test to my aweasome portfolio',
+            description_en: 'this is a increadeble project test to my aweasome portfolio',
+            description_pt:'esse é meu incrivel projeto de teste no meu portfolio',
             image_link: './images/jason_scrapbot.png',
             link: '#'
         }
@@ -106,7 +107,7 @@ function CarouselContainer () {
 function CarrousselItem ( {className, projectData} ) {
     const language = useContext(LanguageContext);
 
-    console.log(`New project: ${projectData.name}`)
+    console.log(`New project: ${projectData.title}`)
     return (
         <span className={className}>
             <div className='carousel_container--item_image_container'>
@@ -114,7 +115,7 @@ function CarrousselItem ( {className, projectData} ) {
             </div>
             <div className='carousel_container--item_body'>
                 <h3>{projectData.title}</h3>
-                <p>{projectData.description}</p>
+                <p>{projectData["description_"+language.language]}</p>
                 <a href={projectData.link}>{translations[language.language]?.take_a_look}</a>
             </div>
         

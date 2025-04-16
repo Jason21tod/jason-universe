@@ -34,17 +34,15 @@ function MainSection () {
   }, []);
 
   return (
-    <div className='main_section'>
+    <main className='main_section'>
       {isOcluded ? <NavBarOclusion /> : <Navigation />}
       <Header />
-      <main>
         <WhoIam />
         <Projects />
         <ScrollAnimation>
           <LetsWorkTogether />
         </ScrollAnimation>
-      </main>
-    </div>
+    </main>
   );
 }
 
