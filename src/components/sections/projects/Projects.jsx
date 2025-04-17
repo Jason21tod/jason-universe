@@ -2,15 +2,23 @@ import React, { useState, useEffect } from 'react'
 import {ScrollAnimation} from '../../utils/text_animations';
 
 import './Projects.css'
-import { checkServerStatus } from '../../../middleware/api_services';
-import axios from 'axios';
+import {checkProjectsEndpointStatus } from '../../../middleware/api_services';
 
 import translations from '../../../translations';
 import { LanguageContext } from '../../../languageContext';
 import { useContext } from 'react';
+import axios from 'axios';
 
 let server_address = process.env.REACT_APP_SERVER;
 let dev_environ = process.env.REACT_APP_ENV;
+let project_data_mock = {
+    title: 'title test',
+    description_en: 'this is a increadeble project test to my aweasome portfolio',
+    description_pt:'esse é meu incrivel projeto de teste no meu portfolio',
+    image_link: './images/jason_scrapbot.png',
+    link: '#'
+}
+
 
 console.log(`enviroment`, dev_environ)
 
@@ -18,13 +26,7 @@ function Projects () {
     const language = useContext(LanguageContext);
 
     useEffect(() => {
-        checkServerStatus(server_address+'/projects', axios.get, {}).then(response =>{
-            console.log(response)
-            console.log('server projects endpoint online')
-        }).catch(error => {
-            console.log(error)
-            console.log('could not connect to projects endpoint')
-        })
+        checkProjectsEndpointStatus();
     })
 
     return (
@@ -43,47 +45,22 @@ function CarouselContainer () {
     const [serverStatus, setServerStatus] = useState('offline')
     
     useEffect(() => {
-        axios
-            .get(`${server_address}/projects`)
+        let serverIsOnline = checkProjectsEndpointStatus();
+        serverIsOnline ? setServerStatus('online') : setServerStatus('offline'); 
+        
+        axios.get(`${server_address}/projects`)
             .then((response) => {
-                setProjects(response.data.projects);
-                setServerStatus('online')
-            })
-            .catch((error) => {
-                console.log(error);
-                setServerStatus('offline')
-            });
+                    setProjects(response.data.projects);
+                }
+            )
+        .catch((error) => {
+            console.log(error);
+            setProjects([])
+        }
+      );
     }, []);
 
-
-    if (dev_environ ==='dev') {
-        let project_data_mock = {
-            title: 'title test',
-            description_en: 'this is a increadeble project test to my aweasome portfolio',
-            description_pt:'esse é meu incrivel projeto de teste no meu portfolio',
-            image_link: './images/jason_scrapbot.png',
-            link: '#'
-        }
-        console.log("environ development")
-
-        return (
-            <div className='generic-container carousel_container'>
-                <CarrousselItem className={'carousel_container--item'} projectData={project_data_mock}/>
-                {projects.map((project, index) => (
-                <CarrousselItem
-                    className={'carousel_container--item'}
-                    key={project.id || index}
-                    projectData={project}
-                />
-            ))}
-            </div>
-
-        )
-    } 
-
-    if (serverStatus==='offline' && dev_environ!=='dev') {
-        console.log((dev_environ==='dev'))
-        console.log(dev_environ)
+    if (serverStatus==='offline' && dev_environ ==='production') {
         return (
             <div className='generic-container'>
                 <h3>Server Is Offline</h3>
@@ -92,6 +69,7 @@ function CarouselContainer () {
     }
     return (
         <div className={'carousel_container'} >
+            {dev_environ === 'dev' ? <CarrousselItem className={'carousel_container--item'} projectData={project_data_mock}/>: undefined}
             {projects.map((project, index) => (
                 <CarrousselItem
                     className={'carousel_container--item'}
