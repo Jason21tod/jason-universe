@@ -60,7 +60,7 @@ function CarouselContainer () {
       );
     }, []);
 
-    if (serverStatus==='offline' && dev_environ ==='production') {
+    if (serverStatus==='offline' && dev_environ !=='dev') {
         return (
             <div className='generic-container'>
                 <h3>Server Is Offline</h3>
