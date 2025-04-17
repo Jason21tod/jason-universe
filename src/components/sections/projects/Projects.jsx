@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import {ScrollAnimation} from '../../utils/text_animations';
 
 import './Projects.css'
-import {checkProjectsEndpointStatus } from '../../../middleware/api_services';
+import {checkServerStatus } from '../../../middleware/api_services';
 
 import translations from '../../../translations';
 import { LanguageContext } from '../../../languageContext';
@@ -26,7 +26,7 @@ function Projects () {
     const language = useContext(LanguageContext);
 
     useEffect(() => {
-        checkProjectsEndpointStatus();
+        checkServerStatus(server_address+'/projects', axios.get, {});
     })
 
     return (
@@ -45,8 +45,17 @@ function CarouselContainer () {
     const [serverStatus, setServerStatus] = useState('offline')
     
     useEffect(() => {
-        let serverIsOnline = checkProjectsEndpointStatus();
-        serverIsOnline ? setServerStatus('online') : setServerStatus('offline'); 
+        checkServerStatus(server_address+'/projects', axios.get, {}).then(response =>{
+            console.log("API Endpoint Response Status:",response  )
+            if (response !== 200 || response !== 300) {
+              setServerStatus("offline")
+            } return setServerStatus("online")
+          }
+        ).catch(error => {
+            console.log(error)
+            console.log('could not send a request to API')
+            return false
+        })
         
         axios.get(`${server_address}/projects`)
             .then((response) => {
