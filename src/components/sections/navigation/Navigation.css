@@ -59,7 +59,7 @@
 
 .navigation_bar-text::before {
     content: "";
-    background-image: url(./welcome-icon-64x64.png);
+    background-image: url(./imgs/welcome-icon-64x64.png);
     background-repeat: no-repeat;
     width: 10%;
     height: 100%;
@@ -181,11 +181,11 @@
     }
 
     #about_me--link::before {
-        background-image: url(./about-me-image-48x48.png);
+        background-image: url(./imgs/about-me-image-48x48.png);
     }
 
     #projects--link::before {
-        background-image: url(./projects-image-48x48.png);
+        background-image: url(./imgs/projects-image-48x48.png);
     }
 
     #about_me--link, #projects--link, #work_with_me--link {
@@ -196,6 +196,6 @@
     }
 
     #work_with_me--link::before {
-        background-image: url(./work-with-me-48x48.png);
+        background-image: url(./imgs/work-with-me-48x48.png);
     }
 }

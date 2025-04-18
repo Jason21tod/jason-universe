@@ -1,23 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import {ScrollAnimation} from '../../utils/text_animations';
+import axios from 'axios';
 
 import './Projects.css'
 import {checkServerStatus } from '../../../middleware/api_services';
+import { project_data_mock } from './test';
 
 import translations from '../../../translations';
 import { LanguageContext } from '../../../languageContext';
-import { useContext } from 'react';
-import axios from 'axios';
 
 let server_address = process.env.REACT_APP_SERVER;
 let dev_environ = process.env.REACT_APP_ENV;
-let project_data_mock = {
-    title: 'title test',
-    description_en: 'this is a increadeble project test to my aweasome portfolio',
-    description_pt:'esse é meu incrivel projeto de teste no meu portfolio',
-    image_link: './images/jason_scrapbot.png',
-    link: '#'
-}
+
 
 
 console.log(`enviroment`, dev_environ)
@@ -45,25 +39,15 @@ function CarouselContainer () {
     const [serverStatus, setServerStatus] = useState('offline')
     
     useEffect(() => {
-        checkServerStatus(server_address+'/projects', axios.get, {}).then(response =>{
-            console.log("API Endpoint Response Status:",response  )
-            if (response !== 200 || response !== 300) {
-              setServerStatus("offline")
-            } return setServerStatus("online")
-          }
-        ).catch(error => {
-            console.log(error)
-            console.log('could not send a request to API')
-            return false
-        })
-        
         axios.get(`${server_address}/projects`)
             .then((response) => {
+                    setServerStatus("online")
                     setProjects(response.data.projects);
                 }
             )
         .catch((error) => {
             console.log(error);
+            setServerStatus("offline")
             setProjects([])
         }
       );

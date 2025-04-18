@@ -1,12 +1,13 @@
 import './LetsWorkTogether.css'
 
 import SidePopup from '../../utils/Notifications';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
+
 import { checkServerStatus } from '../../../middleware/api_services';
 import translations from '../../../translations';
 import { LanguageContext } from '../../../languageContext';
-import { useContext } from 'react';
+import { clearForm, dataFactory, formDataRetriver, submitProposal } from './utils/main';
 
 
 let server_address = process.env.REACT_APP_SERVER;
@@ -15,7 +16,7 @@ let server_address = process.env.REACT_APP_SERVER;
 function LetsWorkTogether () {
     const language = useContext(LanguageContext)
     const [server_status, setServerStatus] = useState('offline')
-    const [popup, setPopup] = useState('--searching')
+    const [popup_class, setPopupClass] = useState('--searching')
     const [popup_type, setPopupType] = useState('searching')
     const [popup_content, setPopupContent] = useState(translations[language.language]?.server_connecting)
 
@@ -30,20 +31,8 @@ function LetsWorkTogether () {
     }, [language.language])
 
 
-    const submitProposal = () => {
-        console.log('submiting proposal')
-        if (server_status === 'offline') {
-            console.log('server is down')
-            changePopupExibition('offline', 'Server is Offline...')
-        } else {
-            console.log('proposal sended')
-            changePopupExibition('online', 'Sending proposal...')
-
-        }
-    }
-
     const changePopupExibition = (server_context, message, timer=3000) => {
-        setPopup('--active')
+        setPopupClass('--active')
         if (server_context === 'offline') {
             setServerStatus(server_context)
             setPopupType('failed')
@@ -54,36 +43,23 @@ function LetsWorkTogether () {
             setPopupContent(message)
         }
         setTimeout(() => 
-            setPopup('--deactivated'),
+            setPopupClass('--deactivated'),
             timer
         )
     }
 
-    function dataFactory(name, email, proposal) {
-        console.log('Name: '+name)
-        console.log('Email: '+email)
-        console.log('Proposal: '+proposal)
-        return {
-            name: name, email:email, about:proposal, cellphone: ''
-        }
-    }
 
     function handleSubmit(event) {
         event.preventDefault()
-        const formData = event.target.elements
-        submitProposal()
-        axios.post(server_address+'/email_service/', {
-            name: formData.name.value,
-            email: formData.email.value,
-            about: formData.proposal.value,
-            cellphone: ''
-        }).then(response => {
+        let form_data = formDataRetriver(event);
+        submitProposal(server_status, changePopupExibition)
+        
+        axios.post(server_address+'/email_service/', form_data)
+        .then(response => {
             console.log(response)
             if (response.data['status']==='success') {
                 changePopupExibition('online', translations[language.language]?.proposal_sended)
-                event.target.elements.name.value = '';
-                event.target.elements.email.value = '';
-                event.target.elements.proposal.value = '';
+                clearForm(event);
             }
         }).catch(error=> {
             console.log(error)
@@ -97,7 +73,7 @@ function LetsWorkTogether () {
                     <div className='col_form-header'>
                         <h2 className="lets_work-title">{translations[language.language]?.work_with_me}</h2>
                         <legend className="lets_work-legend">{translations[language.language]?.lets_work_legend}</legend>
-                        <SidePopup popup_status={popup} type={popup_type} content={popup_content} anim_duration='3s'/>
+                        <SidePopup popup_status={popup_class} type={popup_type} content={popup_content} anim_duration='3s'/>
                     </div>
                     <div className='col_form-form_area'>
                         <form method='post' onSubmit={handleSubmit} className='lets_work-form_container' >
