@@ -4,6 +4,14 @@ import translations from "../../../translations";
 import './Header.css';
 import { useContext } from "react";
 
+
+
+
+/**
+ * The Header Section. That Component uses a lot of text that popup with an animation called WordPopup, but, its applied letter by letter.
+ *
+ * @returns {The Header Component} 
+ */
 function Header() {
   const language = useContext(LanguageContext);  
 

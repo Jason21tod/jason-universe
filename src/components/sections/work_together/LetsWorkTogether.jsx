@@ -13,6 +13,13 @@ import { clearForm, dataFactory, formDataRetriver, submitProposal } from './util
 let server_address = process.env.REACT_APP_SERVER;
 
 
+/**
+ * Section Lets Work Together
+ * 
+ * This Sectin handle the form and process its data
+ *
+ * @returns {The Section LetsWorkTogether} 
+ */
 function LetsWorkTogether () {
     const language = useContext(LanguageContext)
     const [server_status, setServerStatus] = useState('offline')
@@ -31,6 +38,14 @@ function LetsWorkTogether () {
     }, [language.language])
 
 
+    
+    /**
+     * This Function Attemps to connect the server peridically
+     *
+     * @param {The server context provided on the function call and used to change the all form context} server_context 
+     * @param {The message that you can see in the form} message 
+     * @param {The timer until another call to this function} [timer=3000] 
+     */
     const changePopupExibition = (server_context, message, timer=3000) => {
         setPopupClass('--active')
         if (server_context === 'offline') {
@@ -49,6 +64,14 @@ function LetsWorkTogether () {
     }
 
 
+    
+    /**
+     * Handle Submit and Change the form state
+     * 
+     * This function attempts to send the form data to the backend, changing the form state based on the response.
+     *
+     * @param {the event that triger the function} event 
+     */
     function handleSubmit(event) {
         event.preventDefault()
         let form_data = formDataRetriver(event);

@@ -1,5 +1,16 @@
 import { useState, useRef, useEffect } from "react";
 
+
+
+/**
+ * That its a Wrapper for the react components that play a animation when its in the viewport
+ *
+ * @param {{ children: React.Component; className?: string; id?: string; }} param0 
+ * @param {The Component that should be Wrapped} param0.children 
+ * @param {The class name of this scroll animation} [param0.className=''] 
+ * @param {The Id of this, used for navigation porpouses} [param0.id=''] 
+ * @returns {The ScrollAnimation container} 
+ */
 function ScrollAnimation({ children, className='', id='' }) {
     const [isVisible, setIsVisible] = useState(false);
     const elementReference = useRef(null);

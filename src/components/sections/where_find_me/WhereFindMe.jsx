@@ -4,6 +4,14 @@ import { LanguageContext } from '../../../languageContext';
 import { useContext } from 'react';
 
 
+
+/**
+ * Where Find Me Section
+ * 
+ * The Ways to contact me.
+ *
+ * @returns {Returns the Ways to contact} 
+ */
 function WhereFindMe () {
     const language = useContext(LanguageContext)
     

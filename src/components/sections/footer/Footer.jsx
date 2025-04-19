@@ -3,6 +3,12 @@ import translations from '../../../translations';
 import { LanguageContext } from '../../../languageContext';
 import { useContext } from 'react';
 
+
+/**
+ * Footer Section From the code
+ *
+ * @returns {The Footer Section} 
+ */
 function Footer () {
     const language = useContext(LanguageContext);
 

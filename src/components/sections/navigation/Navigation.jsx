@@ -4,6 +4,16 @@ import './Navigation.css';
 import translations from '../../../translations';
 import { LanguageContext } from '../../../languageContext';
 
+
+
+/**
+ * Navigation Section.
+ * 
+ * This React Component returns navigation bar that have two fundamentals behaviors: Be "invisible" when some event are triggered and change the style when
+ * the screen change here size
+ *
+ * @returns {Returns the Navigation Section} 
+ */
 function Navigation() {
     const [menuState, setMenu] = useState("navigation_container--links--inactive");
     

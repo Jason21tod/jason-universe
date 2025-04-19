@@ -6,6 +6,12 @@ import { LanguageContext } from '../../../languageContext';
 import { useContext } from 'react';
 
 
+/**
+ * Who iam
+ * 
+ * The section talking about me
+ * @returns {the section talking about WhoIam}
+ */
 function WhoIam() {
   const language = useContext(LanguageContext);
 

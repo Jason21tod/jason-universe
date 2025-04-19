@@ -16,6 +16,15 @@ let dev_environ = process.env.REACT_APP_ENV;
 
 console.log(`enviroment`, dev_environ)
 
+
+
+/**
+ * The Projects Section
+ * 
+ * The section that holds the projects that are returned by backend.
+ *
+ * @returns {The ScrollAnimation With the Project Section} 
+ */
 function Projects () {
     const language = useContext(LanguageContext);
 
@@ -34,6 +43,15 @@ function Projects () {
     )
 }
 
+
+
+/**
+ * The Carrousel Container
+ * 
+ * This component iterate through a array returned by the backend, then, make a lot of carrouselItem with the data.
+ *
+ * @returns {The CarouselContainer with carrouselItems} 
+ */
 function CarouselContainer () {
     const [projects, setProjects] = useState([])
     const [serverStatus, setServerStatus] = useState('offline')
@@ -75,6 +93,14 @@ function CarouselContainer () {
 }
 
 
+/**
+ * The Carrousel Item
+ *
+ * 
+ * @param {The Class Name to teh carrousel Item} param0.className 
+ * @param {The project that to be included in the Carroussel Item. Should have the fields: image_link, title, description_pt, description_en, link} param0.projectData 
+ * @returns {The carrouselItem with the prjects data} 
+ */
 function CarrousselItem ( {className, projectData} ) {
     const language = useContext(LanguageContext);
 
