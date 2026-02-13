@@ -78,7 +78,7 @@ function CarouselContainer () {
             </div>
         )
     } else {
-        return (
+        try {return (
             <div className={'carousel_container'} >
                 {dev_environ === 'dev' ? <CarrousselItem className={'carousel_container--item'} projectData={project_data_mock}/>: undefined}
                 {projects.map((project, index) => (
@@ -89,7 +89,9 @@ function CarouselContainer () {
                     />
                 ))}
             </div>
-        );
+        );} catch {
+            return "error on getting projects"
+        }
     }
 }
 
