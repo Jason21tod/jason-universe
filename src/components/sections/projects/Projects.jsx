@@ -77,19 +77,20 @@ function CarouselContainer () {
                 <h3>Server Is Offline</h3>
             </div>
         )
+    } else {
+        return (
+            <div className={'carousel_container'} >
+                {dev_environ === 'dev' ? <CarrousselItem className={'carousel_container--item'} projectData={project_data_mock}/>: undefined}
+                {projects.map((project, index) => (
+                    <CarrousselItem
+                        className={'carousel_container--item'}
+                        key={project.id || index}
+                        projectData={project}
+                    />
+                ))}
+            </div>
+        );
     }
-    return (
-        <div className={'carousel_container'} >
-            {dev_environ === 'dev' ? <CarrousselItem className={'carousel_container--item'} projectData={project_data_mock}/>: undefined}
-            {projects.map((project, index) => (
-                <CarrousselItem
-                    className={'carousel_container--item'}
-                    key={project.id || index}
-                    projectData={project}
-                />
-            ))}
-        </div>
-    );
 }
 
 
